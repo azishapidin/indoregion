@@ -8,5 +8,9 @@
             "email": "azishapidin@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+            "psr-4": {
+                "Azishapidin\\IndoRegion\\": "src//"
+            }
+    }
 }
