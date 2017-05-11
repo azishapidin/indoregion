@@ -1,7 +1,11 @@
 {
     "name": "azishapidin/indoregion",
     "description": "Package containing region of Indonesia (provinces, regencies, districts, and villages) for Laravel",
-    "minimum-stability":"dev-master",
+    "minimum-stability": "dev",
+    "require": {
+            "php": ">=5.5.9",
+            "illuminate/support": "~5.0"
+    },
     "license": "MIT License",
     "authors": [
         {
