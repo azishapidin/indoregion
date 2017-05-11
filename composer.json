@@ -1,0 +1,12 @@
+{
+    "name": "azishapidin/indoregion",
+    "description": "Package containing region of Indonesia (provinces, regencies, districts, and villages) for Laravel",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Azis Hapidin",
+            "email": "azishapidin@gmail.com"
+        }
+    ],
+    "require": {}
+}
