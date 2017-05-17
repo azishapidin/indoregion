@@ -8,13 +8,7 @@
             "email": "azishapidin@gmail.com"
         }
     ],
-    "require": {
-            "php": ">=5.3.0",
-            "ext-pdo": "*",
-            "ext-json": "*",
-            "illuminate/database": "^5.0",
-            "illuminate/support": "^5.0"
-    },
+    "require": {},
     "minimum-stability": "dev",
     "prefer-stable": true
 }
