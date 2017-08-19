@@ -3,7 +3,7 @@ Package containing region of Indonesia (provinces, regencies, districts, and vil
 
 > This package is still in development stage and still not running well
 
-## How to Use =>
+## How to Use
 
 ### Clone this Package to Laravel Project
 ### Load Package via Main composer.json and PSR-4
