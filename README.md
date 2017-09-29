@@ -29,7 +29,7 @@ Illuminate\View\ViewServiceProvider::class,
 Azishapidin\IndoRegion\IndoRegionServiceProvider::class,
 ```
 
-### Publish our 'senjata'
+### Publish vendor
 Go to Command Line and run this command:
 ```
 php artisan vendor:publish
