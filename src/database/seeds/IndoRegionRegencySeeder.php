@@ -7,12 +7,13 @@ class IndoRegionRegencySeeder extends Seeder
     /**
      * Run the database seeds.
      *
+     * @deprecated
+     * 
      * @return void
      */
     public function run()
     {
-      $regencies = [
-
+        $regencies = [
             ['id' => '1101', 'province_id' => '11', 'name' => 'KABUPATEN SIMEULUE'],
             ['id' => '1102', 'province_id' => '11', 'name' => 'KABUPATEN ACEH SINGKIL'],
             ['id' => '1103', 'province_id' => '11', 'name' => 'KABUPATEN ACEH SELATAN'],
@@ -527,9 +528,7 @@ class IndoRegionRegencySeeder extends Seeder
             ['id' => '9435', 'province_id' => '94', 'name' => 'KABUPATEN INTAN JAYA'],
             ['id' => '9436', 'province_id' => '94', 'name' => 'KABUPATEN DEIYAI'],
             ['id' => '9471', 'province_id' => '94', 'name' => 'KOTA JAYAPURA'],
-
         ];
-
         DB::table('indoregion_regencies')->insert($regencies);
     }
 }

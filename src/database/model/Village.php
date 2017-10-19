@@ -17,7 +17,8 @@ class Village extends Model
   protected $table = 'indoregion_villages';
   protected $hidden = ['district_id'];
 
-  public function district(){
+  public function district()
+  {
       return $this->belongsTo(District::class);
   }
 }

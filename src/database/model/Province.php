@@ -15,7 +15,9 @@ use App\Regency;
 class Province extends Model
 {
     protected $table = 'indoregion_provinces';
-    public function regencies(){
+
+    public function regencies()
+    {
         return $this->hasMany(Regency::class);
     }
 }

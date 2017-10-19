@@ -18,10 +18,13 @@ class District extends Model
     protected $table = 'indoregion_districts';
     protected $hidden = ['regency_id'];
 
-    public function regency(){
+    public function regency()
+    {
         return $this->belongsTo(Regency::class);
     }
-    public function villages(){
+
+    public function villages()
+    {
         return $this->hasMany(Village::class);
     }
 }
