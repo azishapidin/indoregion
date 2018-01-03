@@ -1,4 +1,5 @@
 # azishapidin/indoregion
+![Passing Broh!](https://travis-ci.org/azishapidin/indoregion.svg?branch=master)
 Package containing region of Indonesia (provinces, regencies, districts, and villages) for Laravel
 
 > This package is still in development stage and still not running well
