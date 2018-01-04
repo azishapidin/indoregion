@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateRegenciesTables extends Migration
 {
@@ -13,11 +13,11 @@ class CreateRegenciesTables extends Migration
      */
     public function up()
     {
-      Schema::create('indoregion_regencies', function(Blueprint $table){
-          $table->char('id', 4);
-          $table->char('province_id', 2);
-          $table->string('name', 50);
-      });
+        Schema::create('indoregion_regencies', function (Blueprint $table) {
+            $table->char('id', 4);
+            $table->char('province_id', 2);
+            $table->string('name', 50);
+        });
     }
 
     /**

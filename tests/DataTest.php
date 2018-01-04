@@ -3,12 +3,12 @@
 use PHPUnit\Framework\TestCase;
 
 /**
- * Data Test
+ * Data Test.
  */
 class DataTest extends TestCase
 {
     /**
-     * Test Provinces Data
+     * Test Provinces Data.
      *
      * @return void
      */
@@ -21,7 +21,7 @@ class DataTest extends TestCase
     }
 
     /**
-     * Test Regencies Data
+     * Test Regencies Data.
      *
      * @return void
      */
@@ -34,7 +34,7 @@ class DataTest extends TestCase
     }
 
     /**
-     * Test Districts Data
+     * Test Districts Data.
      *
      * @return void
      */
@@ -47,7 +47,7 @@ class DataTest extends TestCase
     }
 
     /**
-     * Test Villages Data
+     * Test Villages Data.
      *
      * @return void
      */

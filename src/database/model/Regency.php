@@ -10,8 +10,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Province;
-use App\District;
 
 class Regency extends Model
 {
