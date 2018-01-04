@@ -1,6 +1,6 @@
 <?php
 
-namespace Azishapidin\IndoRegion;
+namespace AzisHapidin\IndoRegion;
 
 use Illuminate\Support\ServiceProvider;
 
