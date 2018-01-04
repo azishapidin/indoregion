@@ -11,8 +11,8 @@ class IndoRegionVillageSeeder extends Seeder
      *
      * @return void
      */
-     public function run()
-     {
+    public function run()
+    {
         $file = file_get_contents('data/villages.txt');
         $villages = unserialize($file);
         foreach ($villages as $village) {

@@ -10,15 +10,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\District;
 
 class Village extends Model
 {
-  protected $table = 'indoregion_villages';
-  protected $hidden = ['district_id'];
+    protected $table = 'indoregion_villages';
+    protected $hidden = ['district_id'];
 
-  public function district()
-  {
-      return $this->belongsTo(District::class);
-  }
+    public function district()
+    {
+        return $this->belongsTo(District::class);
+    }
 }

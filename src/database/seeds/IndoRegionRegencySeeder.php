@@ -8,7 +8,7 @@ class IndoRegionRegencySeeder extends Seeder
      * Run the database seeds.
      *
      * @deprecated
-     * 
+     *
      * @return void
      */
     public function run()
