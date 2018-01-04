@@ -1,34 +1,22 @@
 # azishapidin/indoregion
 [![Build Status](https://travis-ci.org/azishapidin/indoregion.svg?branch=master)](https://travis-ci.org/azishapidin/indoregion) [![StyleCI](https://styleci.io/repos/90970565/shield?branch=master)](https://styleci.io/repos/90970565)
 
-Package containing region of Indonesia (provinces, regencies, districts, and villages) for Laravel
+## Quick Instalation
 
-> This package is still in development stage and still not running well
 
-## How to Use
-
-### Clone this Package to Laravel Project
-### Load Package via Main composer.json and PSR-4
-Just add this in composer.json
 ```
-...
-"psr-4": {
-    ...
-    "Azishapidin\\IndoRegion\\": "packages/azishapidin/indoregion/src"
-    ...
-}
-...
+composer require azishapidin/indoregion
 ```
 Next run this command on main Laravel Project:
 ```
 composer dump-autoload
 ```
-### Register Service Provider in config/app.php
-Open config/app.php and add IndoRegion Service Provider to the Array of Service Providers:
+
+### Register Service Provider
+Open **config/app.php** and add IndoRegion Service Provider to the Array of Service Providers:
 ```
-// ... other providers
-Illuminate\View\ViewServiceProvider::class,
-Azishapidin\IndoRegion\IndoRegionServiceProvider::class,
+// Other providers
+AzisHapidin\IndoRegion\IndoRegionServiceProvider::class,
 ```
 
 ### Publish vendor
@@ -44,10 +32,17 @@ This command will copy these directories to our Project:
 ### Running Migration and Seeder
 Now, we must running migrations for create table in our database and run Seeder for fill it. Just run these in Command Line:
 ```
-composer dump-autoload
 php artisan migrate
 php artisan db:seed --class=IndoRegionProvinceSeeder
 php artisan db:seed --class=IndoRegionRegencySeeder
 php artisan db:seed --class=IndoRegionDistrictSeeder
 php artisan db:seed --class=IndoRegionVillageSeeder
+```
+
+## Usage
+```
+$provinces = \App\Province::all();
+$regencies = \App\Regency::all();
+$districts = \App\District::all();
+$villages = \App\Village::all();
 ```
