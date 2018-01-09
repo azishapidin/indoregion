@@ -7,8 +7,6 @@ class IndoRegionDistrictSeeder extends Seeder
     /**
      * Run the database seeds.
      *
-     * @deprecated
-     * 
      * @return void
      */
     public function run()
