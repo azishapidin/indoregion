@@ -3,6 +3,8 @@
 
 ## Quick Instalation
 
+**Package ini masih dalam tahap development**
+
 Buka Command Line kemudian jalankan perintah dibawah untuk melakukan instalasi package:
 ```
 composer require azishapidin/indoregion
