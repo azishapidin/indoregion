@@ -13,7 +13,7 @@ class IndoRegionProvinceSeeder extends Seeder
      */
     public function run()
     {
-        $file = file_get_contents('data/provinces.txt');
+        $file = file_get_contents(database_path('seeds/data/provinces.txt'));
         $provinces = unserialize($file);
         DB::table('indoregion_provinces')->insert($provinces);
     }

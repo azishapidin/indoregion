@@ -13,7 +13,7 @@ class IndoRegionRegencySeeder extends Seeder
      */
     public function run()
     {
-        $file = file_get_contents('data/regencies.txt');
+        $file = file_get_contents(database_path('seeds/data/regencies.txt'));
         $regencies = unserialize($file);
         DB::table('indoregion_regencies')->insert($regencies);
     }
