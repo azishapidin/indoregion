@@ -33,10 +33,10 @@ Perintah diatas akan menyalin beberapa direktori:
 Selanjutnya jalankan perintah dibawah untuk menjalankan migration dan seeder:
 ```
 php artisan migrate
-php artisan db:seed --class=IndoRegionProvinceSeeder
-php artisan db:seed --class=IndoRegionRegencySeeder
-php artisan db:seed --class=IndoRegionDistrictSeeder
-php artisan db:seed --class=IndoRegionVillageSeeder
+php artisan db:seed --class=IndoRegionProvinceSeeder      # Import data provinsi
+php artisan db:seed --class=IndoRegionRegencySeeder       # Import data kota/kabupaten
+php artisan db:seed --class=IndoRegionDistrictSeeder      # Import data kecamatan/distrik
+php artisan db:seed --class=IndoRegionVillageSeeder       # Import data desa/kelurahan
 ```
 
 ## Usage
