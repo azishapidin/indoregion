@@ -5,16 +5,16 @@ namespace AzisHapidin\IndoRegion;
 use ParseCsv\Csv;
 
 /**
- * Get raw data from CSV Files on /src/database/seeds/csv-data
+ * Get raw data from CSV Files on /src/data/csv
  */
-class RawData
+class RawDataGetter
 {
     /**
      * Raw Data file path.
      *
      * @return string
      */
-    protected static $path = __DIR__ . '/database/seeds/csv-data';
+    protected static $path = __DIR__ . '/data/csv';
 
     /**
      * Get provinces data.

@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use AzisHapidin\IndoRegion\RawData;
+use AzisHapidin\IndoRegion\RawDataGetter as RawData;
 
 /**
  * Data Test

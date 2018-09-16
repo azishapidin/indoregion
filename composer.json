@@ -21,7 +21,7 @@
             "AzisHapidin\\IndoRegion\\": "src/"
         },
         "files": [
-            "src/RawData.php"
+            "src/RawDataGetter.php"
         ]
     },
     "homepage": "https://azishapidin.com/blog",
