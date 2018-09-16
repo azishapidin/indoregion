@@ -23,9 +23,16 @@ class RawDataGetter
      */
     public static function getProvinces()
     {
+        $data = [];
         $result = self::getCsvData(self::$path . '/provinces.csv');
+        foreach ($result as $item) {
+            $data[] = [
+                'id' => $item[0],
+                'name' => $item[1]
+            ];
+        }
 
-        return $result;
+        return $data;
     }
 
     /**
@@ -35,9 +42,17 @@ class RawDataGetter
      */
     public static function getRegencies()
     {
+        $data = [];
         $result = self::getCsvData(self::$path . '/regencies.csv');
+        foreach ($result as $item) {
+            $data[] = [
+                'id' => $item[0],
+                'province_id' => $item[1],
+                'name' => $item[2],
+            ];
+        }
 
-        return $result;
+        return $data;
     }
 
     /**
@@ -47,9 +62,17 @@ class RawDataGetter
      */
     public static function getDistricts()
     {
+        $data = [];
         $result = self::getCsvData(self::$path . '/districts.csv');
+        foreach ($result as $item) {
+            $data[] = [
+                'id' => $item[0],
+                'regency_id' => $item[1],
+                'name' => $item[2],
+            ];
+        }
 
-        return $result;
+        return $data;
     }
 
     /**
@@ -59,9 +82,17 @@ class RawDataGetter
      */
     public static function getVillages()
     {
+        $data = [];
         $result = self::getCsvData(self::$path . '/villages.csv');
+        foreach ($result as $item) {
+            $data[] = [
+                'id' => $item[0],
+                'district_id' => $item[1],
+                'name' => $item[2],
+            ];
+        }
 
-        return $result;
+        return $data;
     }
 
     /**
