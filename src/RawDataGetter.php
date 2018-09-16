@@ -23,9 +23,9 @@ class RawDataGetter
      */
     public static function getProvinces()
     {
-        $result = new Csv(self::$path . '/provinces.csv');
+        $result = self::getCsvData(self::$path . '/provinces.csv');
 
-        return $result->data;
+        return $result;
     }
 
     /**
@@ -35,9 +35,9 @@ class RawDataGetter
      */
     public static function getRegencies()
     {
-        $result = new Csv(self::$path . '/regencies.csv');
+        $result = self::getCsvData(self::$path . '/regencies.csv');
 
-        return $result->data;
+        return $result;
     }
 
     /**
@@ -47,9 +47,9 @@ class RawDataGetter
      */
     public static function getDistricts()
     {
-        $result = new Csv(self::$path . '/districts.csv');
+        $result = self::getCsvData(self::$path . '/districts.csv');
 
-        return $result->data;
+        return $result;
     }
 
     /**
@@ -59,8 +59,27 @@ class RawDataGetter
      */
     public static function getVillages()
     {
-        $result = new Csv(self::$path . '/villages.csv');
+        $result = self::getCsvData(self::$path . '/villages.csv');
 
-        return $result->data;
+        return $result;
+    }
+
+    /**
+     * Get Data from CSV.
+     *
+     * @param string $path File Path.
+     *
+     * @return array
+     */
+    public static function getCsvData($path = '')
+    {
+        $result = [];
+        $file = fopen($path, 'r');
+        while (($line = fgetcsv($file)) !== FALSE) {
+            $result[] = $line;
+        }
+        fclose($file);
+
+        return $result;
     }
 }
