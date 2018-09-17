@@ -13,13 +13,6 @@ Buka Command Line kemudian jalankan perintah dibawah untuk melakukan instalasi p
 ```
 composer require azishapidin/indoregion
 ```
-<<<<<<< HEAD
-=======
-Setelah itu jalankan perintah dibawah juga:
-```
-composer dump-autoload
-```
->>>>>>> 39d711e5e6f5ecf60a02d881f9cd88e5a69eba35
 
 ### Register Service Provider
 Buka file **config/app.php** lalu tambahkan Class IndoRegionServiceProvider kedalam array Service Providers:
