@@ -73,13 +73,8 @@ class RawDataGetter
      */
     public static function getCsvData($path = '')
     {
-        $result = [];
-        $file = fopen($path, 'r');
-        while (($line = fgetcsv($file)) !== FALSE) {
-            $result[] = $line;
-        }
-        fclose($file);
+        $csv = new Csv($path);
 
-        return $result;
+        return $csv->data;
     }
 }

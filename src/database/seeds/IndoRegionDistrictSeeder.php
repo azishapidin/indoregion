@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use AzisHapidin\IndoRegion\RawDataGetter;
 
 class IndoRegionDistrictSeeder extends Seeder
 {
@@ -13,8 +14,7 @@ class IndoRegionDistrictSeeder extends Seeder
      */
     public function run()
     {
-        $file = file_get_contents(database_path('seeds/data/districts.txt'));
-        $districts = unserialize($file);
+        $districts = RawDataGetter::getDistricts();
         DB::table('indoregion_districts')->insert($districts);
     }
 }
