@@ -7,11 +7,11 @@
  *
  */
 
-namespace AzisHapidin\IndoRegion;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Province;
-use App\District;
+use App\Model\Province;
+use App\Model\District;
 
 class Regency extends Model
 {

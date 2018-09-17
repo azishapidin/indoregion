@@ -7,10 +7,10 @@
  *
  */
 
-namespace AzisHapidin\IndoRegion;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Regency;
+use App\Model\Regency;
 
 class Province extends Model
 {

@@ -7,10 +7,10 @@
  *
  */
 
-namespace AzisHapidin\IndoRegion;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-use App\District;
+use App\Model\District;
 
 class Village extends Model
 {
