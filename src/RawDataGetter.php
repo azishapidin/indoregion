@@ -5,7 +5,7 @@ namespace AzisHapidin\IndoRegion;
 use ParseCsv\Csv;
 
 /**
- * Get raw data from CSV Files on /src/data/csv
+ * Get raw data from CSV Files on /src/data/csv.
  */
 class RawDataGetter
 {
@@ -14,7 +14,7 @@ class RawDataGetter
      *
      * @return string
      */
-    protected static $path = __DIR__ . '/data/csv';
+    protected static $path = __DIR__.'/data/csv';
 
     /**
      * Get provinces data.
@@ -23,7 +23,7 @@ class RawDataGetter
      */
     public static function getProvinces()
     {
-        $result = self::getCsvData(self::$path . '/provinces.csv');
+        $result = self::getCsvData(self::$path.'/provinces.csv');
 
         return $result;
     }
@@ -35,7 +35,7 @@ class RawDataGetter
      */
     public static function getRegencies()
     {
-        $result = self::getCsvData(self::$path . '/regencies.csv');
+        $result = self::getCsvData(self::$path.'/regencies.csv');
 
         return $result;
     }
@@ -47,7 +47,7 @@ class RawDataGetter
      */
     public static function getDistricts()
     {
-        $result = self::getCsvData(self::$path . '/districts.csv');
+        $result = self::getCsvData(self::$path.'/districts.csv');
 
         return $result;
     }
@@ -59,7 +59,7 @@ class RawDataGetter
      */
     public static function getVillages()
     {
-        $result = self::getCsvData(self::$path . '/villages.csv');
+        $result = self::getCsvData(self::$path.'/villages.csv');
 
         return $result;
     }
