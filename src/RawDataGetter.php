@@ -5,11 +5,7 @@ namespace AzisHapidin\IndoRegion;
 use ParseCsv\Csv;
 
 /**
-<<<<<<< HEAD
- * Get raw data from CSV Files on /src/data/csv
-=======
  * Get raw data from CSV Files on /src/data/csv.
->>>>>>> 39d711e5e6f5ecf60a02d881f9cd88e5a69eba35
  */
 class RawDataGetter
 {
@@ -18,11 +14,7 @@ class RawDataGetter
      *
      * @return string
      */
-<<<<<<< HEAD
-    protected static $path = __DIR__ . '/data/csv';
-=======
     protected static $path = __DIR__.'/data/csv';
->>>>>>> 39d711e5e6f5ecf60a02d881f9cd88e5a69eba35
 
     /**
      * Get provinces data.
@@ -31,11 +23,7 @@ class RawDataGetter
      */
     public static function getProvinces()
     {
-<<<<<<< HEAD
-        $result = self::getCsvData(self::$path . '/provinces.csv');
-=======
         $result = self::getCsvData(self::$path.'/provinces.csv');
->>>>>>> 39d711e5e6f5ecf60a02d881f9cd88e5a69eba35
 
         return $result;
     }
@@ -47,11 +35,7 @@ class RawDataGetter
      */
     public static function getRegencies()
     {
-<<<<<<< HEAD
-        $result = self::getCsvData(self::$path . '/regencies.csv');
-=======
         $result = self::getCsvData(self::$path.'/regencies.csv');
->>>>>>> 39d711e5e6f5ecf60a02d881f9cd88e5a69eba35
 
         return $result;
     }
@@ -63,11 +47,7 @@ class RawDataGetter
      */
     public static function getDistricts()
     {
-<<<<<<< HEAD
-        $result = self::getCsvData(self::$path . '/districts.csv');
-=======
         $result = self::getCsvData(self::$path.'/districts.csv');
->>>>>>> 39d711e5e6f5ecf60a02d881f9cd88e5a69eba35
 
         return $result;
     }
@@ -79,11 +59,7 @@ class RawDataGetter
      */
     public static function getVillages()
     {
-<<<<<<< HEAD
-        $result = self::getCsvData(self::$path . '/villages.csv');
-=======
         $result = self::getCsvData(self::$path.'/villages.csv');
->>>>>>> 39d711e5e6f5ecf60a02d881f9cd88e5a69eba35
 
         return $result;
     }
