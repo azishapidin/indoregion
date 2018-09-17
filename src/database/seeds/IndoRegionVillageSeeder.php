@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use AzisHapidin\IndoRegion\RawDataGetter;
 
 class IndoRegionVillageSeeder extends Seeder
 {
@@ -13,10 +14,13 @@ class IndoRegionVillageSeeder extends Seeder
      */
      public function run()
      {
-        $file = file_get_contents(database_path('seeds/data/villages.txt'));
-        $villages = unserialize($file);
-        foreach ($villages as $village) {
-            DB::table('indoregion_villages')->insert($village);
-        }
+        $villages = RawDataGetter::getVillages();
+        DB::transaction(function() use($villages) {
+            $collection = collect($villages);
+            $parts = $collection->chunk(1000);
+            foreach ($parts as $subset) {
+                DB::table('indoregion_villages')->insert($subset->toArray());
+            }
+        });
     }
 }

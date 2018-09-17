@@ -1,6 +1,12 @@
 # azishapidin/indoregion
 [![Build Status](https://travis-ci.org/azishapidin/indoregion.svg?branch=master)](https://travis-ci.org/azishapidin/indoregion) [![StyleCI](https://styleci.io/repos/90970565/shield?branch=master)](https://styleci.io/repos/90970565) [![Latest Stable Version](https://poser.pugx.org/azishapidin/indoregion/v/stable)](https://packagist.org/packages/azishapidin/indoregion) [![License](https://poser.pugx.org/azishapidin/indoregion/license)](https://packagist.org/packages/azishapidin/indoregion)
 
+```azishapidin/indoregion``` adalah sebuah package Laravel untuk menyimpan data wilayah Indonesia mulai dari Provinsi, Kabupaten/Kota, Kecamatan, sampai Desa/Kelurahan. Package akan menambahkan migrations, seeder (untuk import data ke database) dan Model pada project Anda.
+
+Semua data akan disimpan di database, untuk mengambil data tersebut sama dengan mengambil data lewat Model pada umum-nya (Lihat bagian Usage).
+
+Data ini diambil dari situs Pemutakhiran MFD dan MBS Badan Pusat Statistik (http://mfdonline.bps.go.id/) pada 11 Januari 2018. Sumber: [https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia](https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia)
+
 ## Quick Instalation
 
 Buka Command Line kemudian jalankan perintah dibawah untuk melakukan instalasi package:
@@ -41,8 +47,12 @@ php artisan db:seed --class=IndoRegionVillageSeeder       # Import data desa/kel
 
 ## Usage
 ```
-$provinces = \App\Province::all();
-$regencies = \App\Regency::all();
-$districts = \App\District::all();
-$villages = \App\Village::all();
+$provinces = \App\Model\Province::all();
+$regencies = \App\Model\Regency::all();
+$districts = \App\Model\District::all();
+$villages = \App\Model\Village::all();
 ```
+
+## Donasi
+
+[Donasi via Paypal](https://www.paypal.me/azishapidin)

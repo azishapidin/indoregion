@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use AzisHapidin\IndoRegion\RawDataGetter;
 
 class IndoRegionRegencySeeder extends Seeder
 {
@@ -13,8 +14,7 @@ class IndoRegionRegencySeeder extends Seeder
      */
     public function run()
     {
-        $file = file_get_contents(database_path('seeds/data/regencies.txt'));
-        $regencies = unserialize($file);
+        $regencies = RawDataGetter::getRegencies();
         DB::table('indoregion_regencies')->insert($regencies);
     }
 }

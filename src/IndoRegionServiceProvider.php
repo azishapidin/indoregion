@@ -4,6 +4,9 @@ namespace AzisHapidin\IndoRegion;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * IndoRegion Service Provider
+ */
 class IndoRegionServiceProvider extends ServiceProvider
 {
     /**
