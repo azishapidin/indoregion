@@ -18,36 +18,46 @@ Route::group(['prefix' => 'indoregion'], function () {
         $data['regencies'] = Regency::count();
         $data['districts'] = District::count();
         $data['villages'] = Village::count();
-        return $data;
+
+        return response()->json($data);
     });
 
     Route::get('provinces', function(){
-        return Province::all();
+        return response()->json(Province::all());
     });
 
     Route::get('regencies', function(){
-        return Regency::all();
+        return response()->json(Regency::all());
     });
 
     Route::get('province/{id}', function($id){
         $province = Province::find($id);
-        $data['name'] = $province->name;
-        $data['regencies'] = $province->regencies;
-        return $data;
+        $data = [
+            'name'      => $province->name,
+            'regencies' => $province->regencies,
+        ];
+
+        return response()->json($data);
     });
 
     Route::get('regency/{id}', function($id){
         $regency = Regency::find($id);
-        $data['name'] = $regency->name;
-        $data['districts'] = $regency->districts;
-        return $data;
+        $data = [
+            'name'      => $regency->name,
+            'districts' => $regency->districts,
+        ];
+
+        return response()->json($data);
     });
 
     Route::get('district/{id}', function($id){
         $district = District::find($id);
-        $data['name'] = $district->name;
-        $data['districts'] = $district->villages;
-        return $data;
+        $data = [
+            'name'      => $district->name,
+            'villages'  => $regency->districts,
+        ];
+
+        return response()->json($district->villages);
     });
 
 });
