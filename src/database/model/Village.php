@@ -7,18 +7,37 @@
  *
  */
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-use App\District;
+use App\Model\District;
 
+/**
+ * Village Model.
+ */
 class Village extends Model
 {
-  protected $table = 'indoregion_villages';
-  protected $hidden = ['district_id'];
+    /**
+     * Table name.
+     *
+     * @var string
+     */
+    protected $table = 'indoregion_villages';
 
-  public function district()
-  {
-      return $this->belongsTo(District::class);
-  }
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = ['district_id'];
+	
+	/**
+     * Village belongs to District.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function district()
+    {
+        return $this->belongsTo(District::class);
+    }
 }
