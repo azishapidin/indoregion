@@ -47,6 +47,7 @@ php artisan db:seed --class=IndoRegionVillageSeeder       # Import data desa/kel
 ```
 
 ## Usage
+Anda bisa gunakan class dibawah seperti model pada umum-nya.
 ```
 $provinces = \App\Model\Province::all();
 $regencies = \App\Model\Regency::all();
