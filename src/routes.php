@@ -6,10 +6,10 @@
  * (c) Azis Hapidin <azishapidin@gmail.com>
  *
  */
-use App\Model\Province;
-use App\Model\Regency;
-use App\Model\District;
-use App\Model\Village;
+use App\Models\Province;
+use App\Models\Regency;
+use App\Models\District;
+use App\Models\Village;
 
 Route::group(['prefix' => 'indoregion'], function () {
 

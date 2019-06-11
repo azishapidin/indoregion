@@ -7,10 +7,10 @@
  *
  */
 
-namespace App\Model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Model\Regency;
+use App\Models\Regency;
 
 /**
  * Province Model.
