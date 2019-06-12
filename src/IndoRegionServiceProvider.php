@@ -16,7 +16,6 @@ class IndoRegionServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        include __DIR__.'/routes.php';
         if (version_compare(app()->version(), '5.0', '>=')) {
             $this->publishes([
                 __DIR__.'/database/migrations/' => database_path('migrations'),
