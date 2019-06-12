@@ -23,6 +23,14 @@
             "src/RawDataGetter.php"
         ]
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AzisHapidin\\IndoRegion\\IndoRegionServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
     "homepage": "https://azishapidin.com/blog",
     "prefer-stable": true
 }
