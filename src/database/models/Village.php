@@ -29,7 +29,9 @@ class Village extends Model
      *
      * @var array
      */
-    protected $hidden = ['district_id'];
+    protected $hidden = [
+        'district_id'
+    ];
 	
 	/**
      * Village belongs to District.

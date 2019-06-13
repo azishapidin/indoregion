@@ -21,7 +21,10 @@ class IndoRegionProvinceSeeder extends Seeder
      */
     public function run()
     {
+        // Get Data
         $provinces = RawDataGetter::getProvinces();
+
+        // Insert Data to Database
         DB::table('indoregion_provinces')->insert($provinces);
     }
 }

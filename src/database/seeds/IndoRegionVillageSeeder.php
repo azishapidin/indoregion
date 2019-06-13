@@ -19,9 +19,12 @@ class IndoRegionVillageSeeder extends Seeder
      *
      * @return void
      */
-     public function run()
-     {
+    public function run()
+    {
+        // Get Data
         $villages = RawDataGetter::getVillages();
+
+        // Insert Data with Chunk
         DB::transaction(function() use($villages) {
             $collection = collect($villages);
             $parts = $collection->chunk(1000);

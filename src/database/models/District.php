@@ -30,7 +30,9 @@ class District extends Model
      *
      * @var array
      */
-    protected $hidden = ['regency_id'];
+    protected $hidden = [
+        'regency_id'
+    ];
 
     /**
      * District belongs to Regency.

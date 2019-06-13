@@ -30,7 +30,9 @@ class Regency extends Model
      *
      * @var array
      */
-    protected $hidden = ['province_id'];
+    protected $hidden = [
+        'province_id'
+    ];
 
     /**
      * Regency belongs to Province.
