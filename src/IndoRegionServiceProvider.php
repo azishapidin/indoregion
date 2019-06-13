@@ -20,7 +20,7 @@ class IndoRegionServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/database/migrations/' => database_path('migrations'),
                 __DIR__.'/database/seeds/' => database_path('seeds'),
-                __DIR__.'/database/model/' => app_path('Model')
+                __DIR__.'/database/models/' => app_path('Models')
             ]);
         }
     }
