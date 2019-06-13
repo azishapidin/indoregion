@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the IndoRegion package
+ * This file is part of the IndoRegion package.
  *
- * (c) Azis Hapidin <azishapidin@gmail.com>
+ * (c) Azis Hapidin <azishapidin.com | azishapidin@gmail.com>
  *
  */
 
