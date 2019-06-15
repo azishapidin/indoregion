@@ -15,7 +15,9 @@ composer require azishapidin/indoregion
 ```
 
 ### Register Service Provider
-Buka file **config/app.php** lalu tambahkan Class IndoRegionServiceProvider kedalam array Service Providers:
+Jika Anda menggunakan Laravel versi 5.5 keatas Anda bisa skip bagian ini karena package indoregion sudah menggunakan Package Auto Discovery.  
+  
+Tapi jika kebetulan Project yang Anda kerjakan masih menggunakan versi dibawah 5.5 maka silahkan untuk membuka file **config/app.php** lalu tambahkan Class IndoRegionServiceProvider kedalam array Service Providers:
 ```
 // Provider Lain
 AzisHapidin\IndoRegion\IndoRegionServiceProvider::class,
@@ -26,7 +28,9 @@ Jalankan perintah dibawah di Command Line:
 ```
 php artisan vendor:publish
 ```
-Perintah diatas akan menyalin beberapa direktori:
+  
+Saat perintah diatas dijalankan, maka akan muncul pilihan list providers atau tag yang bisa di-publish. Silahkan pilih ```Provider: AzisHapidin\IndoRegion\IndoRegionServiceProvider``` untuk menyalin beberapa file yang akan kita butuhkan yaitu:
+
 * File migration dari [/packages/azishapidin/indoregion/src/database/migrations] ke [/database/migrations]
 * File seeder dari [/packages/azishapidin/indoregion/src/database/seeds] ke [/database/seeds]
 * File model dari [/packages/azishapidin/indoregion/src/database/model] ke [/app/Model]
