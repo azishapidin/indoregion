@@ -1,7 +1,7 @@
 # azishapidin/indoregion
 [![Build Status](https://travis-ci.org/azishapidin/indoregion.svg?branch=master)](https://travis-ci.org/azishapidin/indoregion) [![StyleCI](https://styleci.io/repos/90970565/shield?branch=master)](https://styleci.io/repos/90970565) [![License](https://poser.pugx.org/azishapidin/indoregion/license)](https://packagist.org/packages/azishapidin/indoregion)
 
-```azishapidin/indoregion``` adalah sebuah package Laravel untuk menyimpan data wilayah Indonesia mulai dari Provinsi, Kabupaten/Kota, Kecamatan, sampai Desa/Kelurahan. Package akan menambahkan migrations, seeder (untuk import data ke database) dan Model pada project Anda.
+```azishapidin/indoregion``` adalah sebuah package Laravel untuk menyimpan data wilayah Indonesia mulai dari Provinsi, Kabupaten/Kota, Kecamatan/Distrik, sampai Desa/Kelurahan. Package akan menambahkan migrations, seeder (untuk import data ke database) dan Model pada project Anda.
 
 Semua data akan disimpan di database, untuk mengambil data tersebut sama dengan mengambil data lewat Model pada umum-nya (Lihat bagian Usage).
 
@@ -17,7 +17,7 @@ composer require azishapidin/indoregion
 ### Register Service Provider
 Jika Anda menggunakan Laravel versi 5.5 keatas Anda bisa skip bagian ini karena package indoregion sudah menggunakan Package Auto Discovery.  
   
-Tapi jika kebetulan Project yang Anda kerjakan masih menggunakan versi dibawah 5.5 maka silahkan untuk membuka file **config/app.php** lalu tambahkan Class IndoRegionServiceProvider kedalam array Service Providers:
+Tapi jika kebetulan Project yang Anda kerjakan masih menggunakan versi dibawah 5.5 maka silahkan untuk membuka file **config/app.php** lalu tambahkan Class ```IndoRegionServiceProvider``` kedalam array Service Providers:
 ```
 // Provider Lain
 AzisHapidin\IndoRegion\IndoRegionServiceProvider::class,
@@ -29,11 +29,11 @@ Jalankan perintah dibawah di Command Line:
 php artisan vendor:publish
 ```
   
-Saat perintah diatas dijalankan, maka akan muncul pilihan list providers atau tag yang bisa di-publish. Silahkan pilih ```Provider: AzisHapidin\IndoRegion\IndoRegionServiceProvider``` untuk menyalin beberapa file yang akan kita butuhkan yaitu:
+Saat perintah diatas dijalankan, maka akan muncul pilihan list providers atau tags yang bisa di-publish. Silahkan pilih ```Provider: AzisHapidin\IndoRegion\IndoRegionServiceProvider``` untuk menyalin beberapa file yang akan kita butuhkan yaitu:
 
-* File migration dari [/packages/azishapidin/indoregion/src/database/migrations] ke [/database/migrations]
-* File seeder dari [/packages/azishapidin/indoregion/src/database/seeds] ke [/database/seeds]
-* File model dari [/packages/azishapidin/indoregion/src/database/model] ke [/app/Model]
+* File migration dari ```/packages/azishapidin/indoregion/src/database/migrations``` ke ```/database/migrations```
+* File seeder dari ```/packages/azishapidin/indoregion/src/database/seeds``` ke ```/database/seeds```
+* File model dari ```/packages/azishapidin/indoregion/src/database/models``` ke ```/app/Models```
 
 Setelah itu jalankan perintah dibawah:
 ```
