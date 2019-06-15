@@ -31,9 +31,9 @@ php artisan vendor:publish
   
 Saat perintah diatas dijalankan, maka akan muncul pilihan list providers atau tags yang bisa di-publish. Silahkan pilih ```Provider: AzisHapidin\IndoRegion\IndoRegionServiceProvider``` untuk menyalin beberapa file yang akan kita butuhkan yaitu:
 
-* File migration dari ```/packages/azishapidin/indoregion/src/database/migrations``` ke ```/database/migrations```
-* File seeder dari ```/packages/azishapidin/indoregion/src/database/seeds``` ke ```/database/seeds```
-* File model dari ```/packages/azishapidin/indoregion/src/database/models``` ke ```/app/Models```
+* Files migration dari ```/packages/azishapidin/indoregion/src/database/migrations``` ke ```/database/migrations```
+* Files seeder dari ```/packages/azishapidin/indoregion/src/database/seeds``` ke ```/database/seeds```
+* Files model dari ```/packages/azishapidin/indoregion/src/database/models``` ke ```/app/Models```
 
 Setelah itu jalankan perintah dibawah:
 ```
@@ -57,12 +57,26 @@ php artisan db:seed --class=IndoRegionVillageSeeder       # Import data desa/kel
 
 ## Usage
 Anda bisa gunakan class dibawah seperti model pada umum-nya.
+  
 ```
+// Get Semua Data
 $provinces = \App\Models\Province::all();
 $regencies = \App\Models\Regency::all();
 $districts = \App\Models\District::all();
 $villages = \App\Models\Village::all();
+
+// Get Kabupaten/Kota dari sebuah Provinsi
+$regencies = $province->regencies;
+
+// Get Kecamatan dari sebuah Kabupaten/Kota
+$districts = $regency->districts;
+
+// Get Desa/Kelurahan dari sebuah Kecamatan
+$villages = $district->villages;
+
 ```
+
+Untuk lebih jelasnya silahkan diulik ke-empat Model diatas.
 
 ## Donasi
 
