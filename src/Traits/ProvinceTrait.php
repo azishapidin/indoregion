@@ -12,7 +12,7 @@ namespace AzisHapidin\IndoRegion\Traits;
 use App\Models\District;
 use App\Models\Regency;
 
-trait ProviceTrait
+trait ProvinceTrait
 {
     /**
      * Province has many districts.

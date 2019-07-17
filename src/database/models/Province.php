@@ -9,7 +9,7 @@
 
 namespace App\Models;
 
-use AzisHapidin\IndoRegion\Traits\ProviceTrait;
+use AzisHapidin\IndoRegion\Traits\ProvinceTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Province extends Model
 {
-    use ProviceTrait;
+    use ProvinceTrait;
     /**
      * Table name.
      *
