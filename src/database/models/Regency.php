@@ -9,22 +9,23 @@
 
 namespace App\Models;
 
+use AzisHapidin\IndoRegion\Traits\RegencyTrait;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Province;
-use App\Models\District;
 
 /**
  * Regency Model.
  */
 class Regency extends Model
 {
+    use RegencyTrait;
+
     /**
      * Table name.
      *
      * @var string
      */
     protected $table = 'indoregion_regencies';
-    
+
     /**
      * The attributes that should be hidden for arrays.
      *
