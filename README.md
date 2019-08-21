@@ -65,20 +65,20 @@ $regencies = \App\Models\Regency::all();
 $districts = \App\Models\District::all();
 $villages = \App\Models\Village::all();
 
-// Get Kecamatan dari sebuah Provinsi
-$provinces = $province->districts;
+// Get Kecamatan dari sebuah Provinsi.
+$districts = $province->districts;
 
-// Cek jika provinsi memiliki kabupaten terkait menggunakan logika OR bedasarkan nama kabupaten
-$provinces->hasDistrictName(["SELAKAU TIMUR", "PEMANGKAT", "SEMPARUK", "JAWAK"]);
+// Cek jika provinsi memiliki kabupaten terkait menggunakan logika OR bedasarkan nama kabupaten.
+$province->hasDistrictName(["SELAKAU TIMUR", "PEMANGKAT", "SEMPARUK", "JAWAK"]);
 
-// Cek jika provinsi memiliki kabupaten terkait menggunakan logika AND bedasarkan nama kabupaten
-$provinces->hasDistrictName(["SELAKAU TIMUR", "PEMANGKAT", "SEMPARUK", "JAWAI"], true);
+// Cek jika provinsi memiliki kabupaten terkait menggunakan logika AND bedasarkan nama kabupaten.
+$province->hasDistrictName(["SELAKAU TIMUR", "PEMANGKAT", "SEMPARUK", "JAWAI"], true);
 
-// Cek jika provinsi memiliki kabupaten terkait menggunakan logika OR bedasarkan id kabupaten
-$provinces->hasDistrictId([6101, 6102, 6103, 6104]);
+// Cek jika provinsi memiliki kabupaten terkait menggunakan logika OR bedasarkan id kabupaten.
+$province->hasDistrictId([6101, 6102, 6103, 6104]);
 
-// Cek jika provinsi memiliki kabupaten terkait menggunakan logika AND bedasarkan id kabupaten
-$provinces->hasDistrictId([6101, 6102, 6103, 6104], true);
+// Cek jika provinsi memiliki kabupaten terkait menggunakan logika AND bedasarkan id kabupaten.
+$province->hasDistrictId([6101, 6102, 6103, 6104], true);
 
 // Get Kabupaten/Kota dari sebuah Provinsi
 $regencies = $province->regencies;
@@ -87,21 +87,15 @@ $regencies = $province->regencies;
 $districts = $regency->districts;
 
 // Get Desa/Kelurahan dari sebuah Kabupaten/Kota
-$districts = $regency->villages;
+$villages = $regency->villages;
 
-// Cek jika kabupaten memiliki desa/kelurahan terkait menggunakan logika AND bedasarkan nama desa/kelurahan
-$regencies->hasVillageName(["PARIT SETIA", "PELIMPAAN", "SEMPARUK"], true);
+// Cek jika kabupaten memiliki desa/kelurahan terkait menggunakan logika AND bedasarkan nama desa/kelurahan.
+$regency->hasVillageName(["PARIT SETIA", "PELIMPAAN", "SEMPARUK"], true);
 
-// Cek jika kabupaten memiliki desa/kelurahan terkait menggunakan logika AND bedasarkan id desa/kelurahan
-$regencies->hasVillageId([6101050014, 6101040025, 6101060023, 6101020014]);
+// Cek jika kabupaten memiliki desa/kelurahan terkait menggunakan logika AND bedasarkan id desa/kelurahan.
+$regency->hasVillageId([6101050014, 6101040025, 6101060023, 6101020014]);
 
 // Get Desa/Kelurahan dari sebuah Kecamatan
 $villages = $district->villages;
 
 ```
-
-Untuk lebih jelasnya silahkan diulik ke-empat Model diatas.
-
-## Donasi
-
-[Donasi via Paypal](https://www.paypal.me/azishapidin)
