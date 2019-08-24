@@ -9,6 +9,7 @@
 
 namespace App\Models;
 
+use AzisHapidin\IndoRegion\Traits\DistrictTrait;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Regency;
 use App\Models\Village;
@@ -18,6 +19,8 @@ use App\Models\Village;
  */
 class District extends Model
 {
+    use DistrictTrait;
+
     /**
      * Table name.
      *
