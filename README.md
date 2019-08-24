@@ -28,6 +28,31 @@ Jalankan perintah dibawah di Command Line:
 ```
 php artisan vendor:publish
 ```
+
+### Lumen
+Untuk melakukan publish dilumen, tambahkan IndoRegionPublishCommand pada file 
+
+```
+app/Console/Kernel.php
+```
+```
+use AzisHapidin\IndoRegion\IndoRegionPublishCommand; // tambahkan baris ini
+...
+
+class Kernel extends ConsoleKernel
+{
+  protected $commands = [
+          IndoRegionPublishCommand::class // tambahkan baris ini
+      ];
+}
+```
+
+Lalu jalankan perintah dibawah ini
+
+```
+php artisan indoregion:publish
+``` 
+--- 
   
 Saat perintah diatas dijalankan, maka akan muncul pilihan list providers atau tags yang bisa di-publish. Silahkan pilih ```Provider: AzisHapidin\IndoRegion\IndoRegionServiceProvider``` untuk menyalin beberapa file yang akan kita butuhkan yaitu:
 
