@@ -34,16 +34,6 @@ trait DistrictTrait
     }
 
     /**
-     * District belongs to Regency.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function regency()
-    {
-        return $this->regency();
-    }
-
-    /**
      * District belongs to Province.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

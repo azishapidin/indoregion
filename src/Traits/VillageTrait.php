@@ -45,16 +45,6 @@ trait VillageTrait
     }
 
     /**
-     * Village belongs to Districr.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function district()
-    {
-        return $this->district();
-    }
-
-    /**
      * Village belongs to Regency.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
