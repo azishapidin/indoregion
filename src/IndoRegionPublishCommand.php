@@ -65,7 +65,7 @@ class IndoRegionPublishCommand extends Command
         $source = array_diff(scandir($from) , $exclude);
 
         foreach ($source as $item) {
-            $this->info("Copying into : " . $to . $item);
+            $this->info("Copying file: " . $to . $item);
             File::copy($from . $item , $to . $item);
         }
     }
