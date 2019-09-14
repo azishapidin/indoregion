@@ -79,7 +79,7 @@ class IndoRegionPublishCommand extends Command
     {
         $targetPath = app()->path()."/Models/";
 
-        if(!File::isDirectory($targetPath)){
+        if (!File::isDirectory($targetPath)){
             File::makeDirectory($targetPath, 0777, true, true);
         }
 
