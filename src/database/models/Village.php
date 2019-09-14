@@ -9,6 +9,7 @@
 
 namespace App\Models;
 
+use AzisHapidin\IndoRegion\Traits\VillageTrait;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\District;
 
@@ -17,6 +18,8 @@ use App\Models\District;
  */
 class Village extends Model
 {
+    use VillageTrait;
+
     /**
      * Table name.
      *
@@ -32,7 +35,7 @@ class Village extends Model
     protected $hidden = [
         'district_id'
     ];
-	
+
 	/**
      * Village belongs to District.
      *
