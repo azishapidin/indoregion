@@ -40,7 +40,6 @@ Jalankan perintah dibawah di Command Line:
 ```
 php artisan indoregion:publish
 ``` 
---- 
   
 Saat perintah diatas dijalankan, indoregion akan menyalin:
 
