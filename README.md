@@ -15,6 +15,9 @@ composer require azishapidin/indoregion
 ```
 
 ### Register Service Provider
+
+#### Laravel
+
 Jika Anda menggunakan Laravel versi 5.5 keatas Anda bisa skip bagian ini karena package indoregion sudah menggunakan Package Auto Discovery.  
   
 Tapi jika kebetulan Project yang Anda kerjakan masih menggunakan versi dibawah 5.5 maka silahkan untuk membuka file **config/app.php** lalu tambahkan Class ```IndoRegionServiceProvider``` kedalam array Service Providers:
@@ -23,7 +26,15 @@ Tapi jika kebetulan Project yang Anda kerjakan masih menggunakan versi dibawah 5
 AzisHapidin\IndoRegion\IndoRegionServiceProvider::class,
 ```
 
-### Publish vendor
+#### Lumen
+
+Jika Anda ingin menggunakan Package ini pada project Lumen, maka Anda harus melakukan register Service Provider pada file ```bootstrap/app.php``` dengan menambahkan ini:
+
+```
+$app->register(AzisHapidin\IndoRegion\IndoRegionServiceProvider::class);
+```
+
+### Publish File
 Jalankan perintah dibawah di Command Line:
 
 ```
