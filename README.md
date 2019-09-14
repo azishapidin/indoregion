@@ -123,4 +123,27 @@ $regency->hasVillageId([6101050014, 6101040025, 6101060023, 6101020014]);
 // Get Desa/Kelurahan dari sebuah Kecamatan
 $villages = $district->villages;
 
+// Cek Desa ada di sebuah Provinsi
+$village->isProvince(61);
+
+// Cek Desa ada di sebuah Kabupaten
+$village->isRegency(6102);
+
+// Cek Desa ada di sebuah Kecamatan
+$village->isDistrict(6101050);
+
+// Cek Kecamatan ada di sebuah Provinsi
+$district->isProvince(61);
+
+// Cek Kecamatan ada di sebuah Kabupaten
+$village->isRegency(6102);
+
+// Get Kabupaten dari sebuah Desa
+$village->regency;
+
+// Get Provinsi dari sebuah Desa
+$village->province;
+
+// Get Provinsi dari sebuah Kecamatan
+$district->province;
 ```
