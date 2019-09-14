@@ -28,6 +28,31 @@ Jalankan perintah dibawah di Command Line:
 ```
 php artisan vendor:publish
 ```
+
+### Lumen
+Untuk melakukan publish dilumen, tambahkan IndoRegionPublishCommand pada file 
+
+```
+app/Console/Kernel.php
+```
+```
+use AzisHapidin\IndoRegion\IndoRegionPublishCommand; // tambahkan baris ini
+...
+
+class Kernel extends ConsoleKernel
+{
+  protected $commands = [
+          IndoRegionPublishCommand::class // tambahkan baris ini
+      ];
+}
+```
+
+Lalu jalankan perintah dibawah ini
+
+```
+php artisan indoregion:publish
+``` 
+--- 
   
 Saat perintah diatas dijalankan, maka akan muncul pilihan list providers atau tags yang bisa di-publish. Silahkan pilih ```Provider: AzisHapidin\IndoRegion\IndoRegionServiceProvider``` untuk menyalin beberapa file yang akan kita butuhkan yaitu:
 
@@ -98,4 +123,27 @@ $regency->hasVillageId([6101050014, 6101040025, 6101060023, 6101020014]);
 // Get Desa/Kelurahan dari sebuah Kecamatan
 $villages = $district->villages;
 
+// Cek Desa ada di sebuah Provinsi
+$village->isProvince(61);
+
+// Cek Desa ada di sebuah Kabupaten
+$village->isRegency(6102);
+
+// Cek Desa ada di sebuah Kecamatan
+$village->isDistrict(6101050);
+
+// Cek Kecamatan ada di sebuah Provinsi
+$district->isProvince(61);
+
+// Cek Kecamatan ada di sebuah Kabupaten
+$village->isRegency(6102);
+
+// Get Kabupaten dari sebuah Desa
+$village->regency;
+
+// Get Provinsi dari sebuah Desa
+$village->province;
+
+// Get Provinsi dari sebuah Kecamatan
+$district->province;
 ```
