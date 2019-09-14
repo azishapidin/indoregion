@@ -77,6 +77,12 @@ class IndoRegionPublishCommand extends Command
      */
     protected function publishModels()
     {
+        $targetPath = app()->path()."/Models/";
+
+        if(!File::isDirectory($targetPath)){
+            File::makeDirectory($targetPath, 0777, true, true);
+        }
+
         $this->publishDirectory(__DIR__.'/database/models/', app()->path()."/Models/");
     }
 
