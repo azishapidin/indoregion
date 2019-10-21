@@ -21,7 +21,7 @@ class CreateProvincesTables extends Migration
     public function up()
     {
         Schema::create('indoregion_provinces', function(Blueprint $table){
-            $table->char('id', 2);
+            $table->char('id', 2)->index();
             $table->string('name');
         });
     }
