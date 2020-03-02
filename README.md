@@ -86,8 +86,8 @@ $villages = Village::all();
 
 // Cari berdasarkan nama
 $provinces = Province::where('name', 'JAWA BARAT')->first();
-$regencies = Regency::where('name', 'LIKE', '%CIANJUR%')->get();
-$districts = District::where('name', 'LIKE', 'KABUPATEN%')->get();
+$regencies = Regency::where('name', 'LIKE', '%CIANJUR%')->first();
+$districts = District::where('name', 'LIKE', 'BANDUNG%')->get();
 $villages = Village::where('name', 'BOJONGHERANG')->first();
 
 ```
