@@ -67,15 +67,35 @@ php artisan db:seed --class=IndoRegionDistrictSeeder      # Import data kecamata
 php artisan db:seed --class=IndoRegionVillageSeeder       # Import data desa/kelurahan
 ```
 
-## Usage
+## Basic Usage
 Anda bisa gunakan class dibawah seperti model pada umum-nya.
   
 ```
-// Get Semua Data
-$provinces = \App\Models\Province::all();
-$regencies = \App\Models\Regency::all();
-$districts = \App\Models\District::all();
-$villages = \App\Models\Village::all();
+<?php
+
+use App\Models\Province;
+use App\Models\Regency;
+use App\Models\District;
+use App\Models\Village;
+
+// Get semua data
+$provinces = Province::all();
+$regencies = Regency::all();
+$districts = District::all();
+$villages = Village::all();
+
+// Cari berdasarkan nama
+$provinces = Province::where('name', 'JAWA BARAT')->first();
+$regencies = Regency::where('name', 'LIKE', '%CIANJUR%')->get();
+$districts = District::where('name', 'LIKE', 'KABUPATEN%')->get();
+$villages = Village::where('name', 'BOJONGHERANG')->first();
+
+```
+
+## Advance Usage
+
+```
+<?php
 
 // Get Kecamatan dari sebuah Provinsi.
 $districts = $province->districts;
