@@ -1,0 +1,17 @@
+<?php
+
+/*
+ * This file is part of the IndoRegion package.
+ *
+ * (c) Cacing69 <cacing69@gmail.com>
+ *
+ */
+
+namespace AzisHapidin\IndoRegion\Facades;
+use Illuminate\Support\Facades\Facade;
+
+class IndoRegionFacade extends Facade {
+    protected static function getFacadeAccessor(){
+        return 'indoregion';
+    }
+}

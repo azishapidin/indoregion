@@ -16,18 +16,43 @@ use App\Models\Village;
 
 class IndoRegion
 {
-    public function getProvinces()
+    private $province;
+
+
+    public function __construct()
     {
-        # code...
+        $this->province = new Province();
     }
 
-    public function searchProvinces($name = '')
+    /**
+     * get province instance.
+     *
+     * @return Province
+     */
+    public function getProvince()
     {
-        # code...
+        return $this->province;
     }
 
-    public function findProvince($key = '', $value = '')
+    /**
+     * search province by name.
+     *
+     * @param String $name String of province
+     * @return items of Province 
+     */
+    public function searchProvinceByName($name = '')
     {
-        # code...
+        return $this->province->where("name", "like", "%".$name."%")->get();
+    }
+
+    /**
+     * find province by id.
+     *
+     * @param int $id Id of province
+     * @return Province 
+     */
+    public function findProvinceById($id)
+    {
+        return $this->province->find($id);
     }
 }

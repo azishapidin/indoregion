@@ -10,6 +10,8 @@
 namespace AzisHapidin\IndoRegion;
 
 use Illuminate\Support\ServiceProvider;
+use AzisHapidin\IndoRegion\IndoRegion;
+use AzisHapidin\IndoRegion\IndoRegionFacade;
 use AzisHapidin\IndoRegion\IndoRegionPublishCommand;
 
 /**
@@ -38,6 +40,8 @@ class IndoRegionServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
+        $this->app->bind('indoregion', function(){
+            return new IndoRegion();
+        });
     }
 }
