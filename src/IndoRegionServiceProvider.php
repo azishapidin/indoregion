@@ -11,7 +11,6 @@ namespace AzisHapidin\IndoRegion;
 
 use Illuminate\Support\ServiceProvider;
 use AzisHapidin\IndoRegion\IndoRegion;
-use AzisHapidin\IndoRegion\IndoRegionFacade;
 use AzisHapidin\IndoRegion\IndoRegionPublishCommand;
 
 /**
