@@ -26,6 +26,11 @@ Tapi jika kebetulan Project yang Anda kerjakan masih menggunakan versi dibawah 5
 AzisHapidin\IndoRegion\IndoRegionServiceProvider::class,
 ```
 
+```
+// Alias
+'IndoRegion' => AzisHapidin\IndoRegion\Facades\IndoRegionFacade::class,
+```
+
 #### Lumen
 
 Jika Anda ingin menggunakan Package ini pada project Lumen, maka Anda harus melakukan register Service Provider pada file ```bootstrap/app.php``` dengan menambahkan ini:
