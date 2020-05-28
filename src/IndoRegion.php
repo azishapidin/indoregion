@@ -29,9 +29,9 @@ class IndoRegion
      *
      * @return Province
      */
-    public function getProvince()
+    public function getAllProvince()
     {
-        return $this->province;
+        return $this->province->query()->get();
     }
 
     /**
