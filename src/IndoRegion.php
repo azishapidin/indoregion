@@ -4,15 +4,16 @@
  * This file is part of the IndoRegion package.
  *
  * (c) Azis Hapidin <azishapidin.com | azishapidin@gmail.com>
+ * (c) Ibnul Mutaki < cacing69 | ibnuul@gmail.com>
  *
  */
 
 namespace AzisHapidin\IndoRegion;
 
-use App\Models\Province;
-use App\Models\Regency;
-use App\Models\District;
-use App\Models\Village;
+use AzisHapidin\IndoRegion\Models\Province;
+use AzisHapidin\IndoRegion\Models\Regency;
+use AzisHapidin\IndoRegion\Models\District;
+use AzisHapidin\IndoRegion\Models\Village;
 
 class IndoRegion
 {

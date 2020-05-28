@@ -11,7 +11,8 @@ namespace AzisHapidin\IndoRegion;
 
 use Illuminate\Support\ServiceProvider;
 use AzisHapidin\IndoRegion\IndoRegion;
-use AzisHapidin\IndoRegion\IndoRegionPublishCommand;
+use AzisHapidin\IndoRegion\Commands\PublishCommand;
+use AzisHapidin\IndoRegion\Commands\MigrateCommand;
 
 /**
  * IndoRegion Service Provider
@@ -27,7 +28,8 @@ class IndoRegionServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                IndoRegionPublishCommand::class,
+                PublishCommand::class,
+                MigrateCommand::class,
             ]);
         }
     }
