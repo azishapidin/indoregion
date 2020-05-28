@@ -20,12 +20,10 @@ class Village extends Model
 {
     use VillageTrait;
 
-    /**
-     * Table name.
-     *
-     * @var string
-     */
-    protected $table = 'indoregion_villages';
+    public function getTable()
+    {
+        return config('indoregion.table.village');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
@@ -43,6 +41,6 @@ class Village extends Model
      */
     public function district()
     {
-        return $this->belongsTo(District::class);
+        return $this->belongsTo(config('indoregion.models.distirct'));
     }
 }

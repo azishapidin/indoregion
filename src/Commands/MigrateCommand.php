@@ -45,10 +45,10 @@ class MigrateCommand extends Command
     {
 
         $message = "- A migration that creates table :
-        \t1.provinces
-        \t2.regencies
-        \t3.districts
-        \t4.villages";
+          1.provinces
+          2.regencies
+          3.districts
+          4.villages";
 
         $this->comment($message);
         

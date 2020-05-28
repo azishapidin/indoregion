@@ -10,11 +10,9 @@ namespace AzisHapidin\IndoRegion\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use AzisHapidin\IndoRegion\Traits\IndoRegionDirectoryTrait;
 
 class PublishCommand extends Command
 {
-    use IndoRegionDirectoryTrait;
 
     /**
      * The console command signature.
@@ -23,7 +21,7 @@ class PublishCommand extends Command
      */
     protected $signature = 'indoregion:publish';
 
-    protected $defaultDir = __DIR__."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR;
+    protected $defaultDir = __DIR__."../../";
 
 
     /**
@@ -51,26 +49,26 @@ class PublishCommand extends Command
     public function fire()
     {
         $message = "- A migration that creates :
-        \t1.provinces
-        \t2.regencies
-        \t3.districts
-        \t4.villages
-        \tmigration will be created in database/migrations directory";
+          1.provinces
+          2.regencies
+          3.districts
+          4.villages
+          migration will be created in database/migrations directory";
 
         $message .= "\n\n- A model that creates :
-        \t1.Province
-        \t2.Regency
-        \t3.District
-        \t4.Village
-        \tmodels will be created in app\Models directory";
+          1.Province
+          2.Regency
+          3.District
+          4.Village
+          models will be created in app/Models directory";
 
         $message .= "\n\n- A seed that creates :
-        \t1.IndoRegionSeeder
-        \t2.IndoRegionprovinceSeeder
-        \t3.IndoRegionRegencySeeder
-        \t4.IndoRegionDistrictSeeder
-        \t5.IndoRegionVillageSeeder
-        \tseeders will be created in database/seeds";
+          1.IndoRegionSeeder
+          2.IndoRegionprovinceSeeder
+          3.IndoRegionRegencySeeder
+          4.IndoRegionDistrictSeeder
+          5.IndoRegionVillageSeeder
+          seeders will be created in database/seeds";
 
         $this->comment($message);
 
@@ -121,13 +119,13 @@ class PublishCommand extends Command
      */
     protected function publishModels()
     {
-        $targetPath = $this->getDirModelTarget() ;
+        $targetPath = app()->path("Models/") ;
 
         if (!File::isDirectory($targetPath)){
             File::makeDirectory($targetPath, 0777, true, true);
         }
 
-        $this->publishDirectory($this->getDirModelDefault($this->defaultDir) , $targetPath);
+        $this->publishDirectory($this->defaultDir.'/database/models/' , $targetPath);
     }
 
     /**
@@ -137,7 +135,7 @@ class PublishCommand extends Command
      */
     protected function publishMigrations()
     {
-        $this->publishDirectory($this->getDirMigrationDefault($this->defaultDir) , $this->getDirMigrationTarget());
+        $this->publishDirectory($this->defaultDir.'/database/migrations/' , app()->databasePath("migrations/"));
     }
 
     /**
@@ -147,6 +145,6 @@ class PublishCommand extends Command
      */
     protected function publishSeeds()
     {
-        $this->publishDirectory($this->getDirSeedDefault($this->defaultDir) , $this->getDirSeedTarget());
+        $this->publishDirectory($this->defaultDir.'/database/seeds/' , app()->databasePath("seeds/"));
     }
 }

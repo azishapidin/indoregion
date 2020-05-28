@@ -9,19 +9,20 @@
 
 namespace AzisHapidin\IndoRegion;
 
-use AzisHapidin\IndoRegion\Models\Province;
-use AzisHapidin\IndoRegion\Models\Regency;
-use AzisHapidin\IndoRegion\Models\District;
-use AzisHapidin\IndoRegion\Models\Village;
-
 class IndoRegion
 {
     private $province;
+    private $regency;
+    private $district;
+    private $village;
 
 
     public function __construct()
     {
-        $this->province = new Province();
+        $this->province = app(config('indoregion.models.province'));
+        $this->regency = app(config('indoregion.models.regency'));
+        $this->district = app(config('indoregion.models.district'));
+        $this->village = app(config('indoregion.models.village'));
     }
 
     /**

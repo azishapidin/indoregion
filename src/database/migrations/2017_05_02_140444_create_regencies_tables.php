@@ -20,11 +20,16 @@ class CreateRegenciesTables extends Migration
      */
     public function up()
     {
-        Schema::create('indoregion_regencies', function(Blueprint $table){
+        Schema::create($this->getTableName(), function(Blueprint $table){
             $table->char('id', 4)->index();
             $table->char('province_id', 2);
             $table->string('name', 50);
         });
+    }
+
+    public function getTableName()
+    {
+        return config('indoregion.table.regency');
     }
 
     /**
