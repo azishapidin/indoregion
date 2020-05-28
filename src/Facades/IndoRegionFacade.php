@@ -3,7 +3,7 @@
 /*
  * This file is part of the IndoRegion package.
  *
- * (c) Cacing69 <cacing69@gmail.com>
+ * (c) Ibnul Mutaki < cacing69 | ibnuul@gmail.com>
  *
  */
 

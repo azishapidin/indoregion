@@ -2,7 +2,7 @@
 /*
  * This file is part of the IndoRegion package.
  *
- * (c) Ibnul Mutaki <cacing69 | cacingworm@gmail.com>
+ * (c) Ibnul Mutaki < cacing69 | ibnuul@gmail.com>
  *
  */
 
