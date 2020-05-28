@@ -4,7 +4,6 @@
  * This file is part of the IndoRegion package.
  *
  * (c) Azis Hapidin <azishapidin.com | azishapidin@gmail.com>
- * (c) Ibnul Mutaki < cacing69 | ibnuul@gmail.com>
  *
  */
 
