@@ -12,7 +12,7 @@ namespace AzisHapidin\IndoRegion;
 use Illuminate\Support\ServiceProvider;
 use AzisHapidin\IndoRegion\IndoRegion;
 use AzisHapidin\IndoRegion\Commands\PublishCommand;
-use AzisHapidin\IndoRegion\Commands\MigrateCommand;
+use AzisHapidin\IndoRegion\Commands\PupolateCommand;
 
 /**
  * IndoRegion Service Provider
@@ -31,9 +31,11 @@ class IndoRegionServiceProvider extends ServiceProvider
             __DIR__.'/config/config.php' => app()->basePath() . '/config/indoregion.php',
         ]);
 
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+
         // Register commands
         $this->commands('command.indoregion.publish');
-        $this->commands('command.indoregion.migrate');
+        $this->commands('command.indoregion.populate');
     }
 
     /**
@@ -46,6 +48,7 @@ class IndoRegionServiceProvider extends ServiceProvider
         $this->app->bind('indoregion', function(){
             return new IndoRegion();
         });
+
         $this->app->alias('indoregion', AzisHapidin\IndoRegion\IndoRegion::class);
     }
 
@@ -74,8 +77,8 @@ class IndoRegionServiceProvider extends ServiceProvider
             return new PublishCommand();
         });
 
-        $this->app->singleton('command.indoregion.migrate', function ($app) {
-            return new MigrateCommand();
+        $this->app->singleton('command.indoregion.populate', function ($app) {
+            return new PupolateCommand();
         });
     }
 
@@ -95,8 +98,7 @@ class IndoRegionServiceProvider extends ServiceProvider
     {
         return [
             'command.indoregion.publish',
-            'command.indoregion.migrate',
-            // 'command.indoregion.seed',
+            'command.indoregion.populate',
         ];
     }
 }

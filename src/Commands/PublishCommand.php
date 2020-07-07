@@ -86,6 +86,9 @@ class PublishCommand extends Command
             $this->comment("Publish migration complete");
             $this->publishSeeds();
             $this->comment("Publish seeder complete");
+            
+            // $this->publishConfig();
+            // $this->comment("Publish config complete");
 
             $this->info("Publishing IndoRegion complete");
 

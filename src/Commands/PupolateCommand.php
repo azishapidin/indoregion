@@ -9,22 +9,23 @@
 namespace AzisHapidin\IndoRegion\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 
-class MigrateCommand extends Command
+class PupolateCommand extends Command
 {
     /**
      * The console command signature.
      *
      * @var string
      */
-    protected $signature = 'indoregion:migrate';
+    protected $signature = 'indoregion:populate';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Migration from IndoRegion';
+    protected $description = 'Migration & Seed from IndoRegion';
 
     /**
      * Compatiblity for Lumen 5.5.
@@ -44,21 +45,19 @@ class MigrateCommand extends Command
     public function fire()
     {
 
-        $message = "- A migration that creates table :
-          1.provinces
-          2.regencies
-          3.districts
-          4.villages";
-
-        $this->comment($message);
-        
-        $this->line('');
-
-        if ($this->confirm("Proceed with the models, seeds, & migration creation? [yes|no]", "yes")) {
+        if ($this->confirm("Proceed tables & rows creation? [yes|no]", "yes")) {
 
             $this->line('');
 
-            $this->info("Migration IndoRegion complete");
+            $this->info("migrating files...");
+            Artisan::call('migrate');
+            $this->line('');
+            $this->info("seeding files...");
+            Artisan::call('db:seed', [
+                "--class" => "IndoRegionSeeder"
+            ]);
+            $this->line('');
+            $this->info("Pupolate IndoRegion complete");
 
             $this->line('');
         }
