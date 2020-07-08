@@ -55,13 +55,6 @@ class PublishCommand extends Command
           4.villages
           migration will be created in database/migrations directory";
 
-        $message .= "\n\n- A model that creates :
-          1.Province
-          2.Regency
-          3.District
-          4.Village
-          models will be created in app/Models directory";
-
         $message .= "\n\n- A seed that creates :
           1.IndoRegionSeeder
           2.IndoRegionprovinceSeeder
@@ -74,14 +67,12 @@ class PublishCommand extends Command
 
         $this->line('');
 
-        if ($this->confirm("Proceed with the models, seeds, & migration creation? [yes|no]", "yes")) {
+        if ($this->confirm("Proceed with the seeds, & migration creation? [yes|no]", "yes")) {
 
             $this->line('');
 
-            $this->info("Publish files...");
-            
-            $this->publishModels();
-            $this->comment("Publish model complete");
+            $this->info("Publish...");
+
             $this->publishMigrations();
             $this->comment("Publish migration complete");
             $this->publishSeeds();
@@ -113,22 +104,6 @@ class PublishCommand extends Command
             $this->info("Copying file: " . $to . $item);
             File::copy($from . $item , $to . $item);
         }
-    }
-
-    /**
-     * Publish model.
-     *
-     * @return void
-     */
-    protected function publishModels()
-    {
-        $targetPath = app()->path("Models/") ;
-
-        if (!File::isDirectory($targetPath)){
-            File::makeDirectory($targetPath, 0777, true, true);
-        }
-
-        $this->publishDirectory($this->defaultDir.'/database/models/' , $targetPath);
     }
 
     /**
