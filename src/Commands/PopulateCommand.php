@@ -11,7 +11,7 @@ namespace AzisHapidin\IndoRegion\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 
-class PupolateCommand extends Command
+class PopulateCommand extends Command
 {
     /**
      * The console command signature.
@@ -71,13 +71,13 @@ class PupolateCommand extends Command
                     ]);
                 }
                 
-                $this->info("Pupolate complete");
+                $this->info("Populate complete");
             } else {
                 Artisan::call('db:seed', [
                     "--class" => "IndoRegionSeeder"
                 ]);
 
-                $this->info("Pupolate IndoRegion complete");
+                $this->info("Populate IndoRegion complete");
             }
             
             $this->line('');

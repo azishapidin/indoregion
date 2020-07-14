@@ -34,7 +34,7 @@
         ],
         "classmaps" : [
             "database/seeds",
-            "database/migrations",
+            "database/migrations"
         ]
     },
     "extra": {

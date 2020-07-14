@@ -12,7 +12,7 @@ namespace AzisHapidin\IndoRegion;
 use Illuminate\Support\ServiceProvider;
 use AzisHapidin\IndoRegion\IndoRegion;
 use AzisHapidin\IndoRegion\Commands\PublishCommand;
-use AzisHapidin\IndoRegion\Commands\PupolateCommand;
+use AzisHapidin\IndoRegion\Commands\PopulateCommand;
 
 /**
  * IndoRegion Service Provider
@@ -78,7 +78,7 @@ class IndoRegionServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton('command.indoregion.populate', function ($app) {
-            return new PupolateCommand();
+            return new PopulateCommand();
         });
     }
 
