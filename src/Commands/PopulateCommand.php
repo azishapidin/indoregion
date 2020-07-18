@@ -27,6 +27,11 @@ class PopulateCommand extends Command
      */
     protected $description = 'Migration & Seed from IndoRegion';
 
+    /**
+     * Seeder map.
+     *
+     * @var string[]
+     */
     protected $mapSeeder = [
         "province" => "IndoRegionProvinceSeeder",
         "regency" => "IndoRegionRegencySeeder",
@@ -48,10 +53,10 @@ class PopulateCommand extends Command
      * Execute the console command.
      *
      * @return void
+     * @throws \Exception
      */
     public function fire()
     {
-
         $this->validateOnly();
 
         if ($this->confirm("Proceed tables & rows creation? [yes|no]", "yes")) {
@@ -84,11 +89,22 @@ class PopulateCommand extends Command
         }
     }
 
+    /**
+     * Get requested key to be populated.
+     *
+     * @return false|string[]
+     */
     private function getOnlyAsArray()
     {
         return explode(",", $this->option('only'));
     }
 
+    /**
+     * Validate that requested key is valid.
+     *
+     * @return bool
+     * @throws \Exception
+     */
     private function validateOnly()
     {
         $return = false;
@@ -106,11 +122,22 @@ class PopulateCommand extends Command
         return $return;
     }
 
+    /**
+     * Get valid key for requested key.
+     *
+     * @return string
+     */
     public function getValidKeyAsString()
     {
         return implode(",", array_keys($this->mapSeeder));
     }
 
+    /**
+     * Get seeder class.
+     *
+     * @param $key
+     * @return string
+     */
     public function getSeeder($key)
     {
         return $this->mapSeeder[$key];
