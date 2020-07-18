@@ -3,11 +3,11 @@
 /*
  * This file is part of the IndoRegion package.
  *
- * (c) Azis Hapidin <azishapidin.com | azishapidin@gmail.com>
+ * (c) Ibnul Mutaki < cacing69 | ibnuul@gmail.com>
  *
  */
 
-namespace App\Models;
+namespace AzisHapidin\IndoRegion\Models;
 
 use AzisHapidin\IndoRegion\Traits\ProvinceTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -18,12 +18,11 @@ use Illuminate\Database\Eloquent\Model;
 class Province extends Model
 {
     use ProvinceTrait;
-    /**
-     * Table name.
-     *
-     * @var string
-     */
-    protected $table = 'indoregion_provinces';
+
+    public function getTable()
+    {
+        return config('indoregion.table.province');
+    }
 
     /**
      * Province has many regencies.
@@ -32,6 +31,6 @@ class Province extends Model
      */
     public function regencies()
     {
-        return $this->hasMany(Regency::class);
+        return $this->hasMany(config('indoregion.models.regency'));
     }
 }

@@ -9,9 +9,6 @@
 namespace AzisHapidin\IndoRegion\Traits;
 
 
-use App\Models\District;
-use App\Models\Village;
-
 trait RegencyTrait
 {
     /**
@@ -21,7 +18,7 @@ trait RegencyTrait
      */
     public function villages()
     {
-        return $this->hasManyThrough(Village::class, District::class);
+        return $this->hasManyThrough(config('indoregion.models.village'), config('indoregion.models.district'));
     }
 
     /**

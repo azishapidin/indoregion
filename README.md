@@ -21,16 +21,21 @@ composer require azishapidin/indoregion
 Jika Anda menggunakan Laravel versi 5.5 keatas Anda bisa skip bagian ini karena package indoregion sudah menggunakan Package Auto Discovery.  
   
 Tapi jika kebetulan Project yang Anda kerjakan masih menggunakan versi dibawah 5.5 maka silahkan untuk membuka file **config/app.php** lalu tambahkan Class ```IndoRegionServiceProvider``` kedalam array Service Providers:
-```
+```php
 // Provider Lain
 AzisHapidin\IndoRegion\IndoRegionServiceProvider::class,
+```
+
+```php
+// Alias
+'IndoRegion' => AzisHapidin\IndoRegion\Facades\IndoRegionFacade::class,
 ```
 
 #### Lumen
 
 Jika Anda ingin menggunakan Package ini pada project Lumen, maka Anda harus melakukan register Service Provider pada file ```bootstrap/app.php``` dengan menambahkan ini:
 
-```
+```php
 $app->register(AzisHapidin\IndoRegion\IndoRegionServiceProvider::class);
 ```
 
@@ -45,38 +50,28 @@ Saat perintah diatas dijalankan, indoregion akan menyalin:
 
 * Files migration dari ```/packages/azishapidin/indoregion/src/database/migrations``` ke ```/database/migrations```
 * Files seeder dari ```/packages/azishapidin/indoregion/src/database/seeds``` ke ```/database/seeds```
-* Files model dari ```/packages/azishapidin/indoregion/src/database/models``` ke ```/app/Models```
 
 Setelah itu jalankan perintah dibawah:
 ```
 composer dump-autoload
 ```
 
-### Migrate and Seeder
-Jalankan perintah dibawah untuk menjalankan migration dan seeder:
+### Populate
+Jalankan perintah dibaawah ini untuk melakukan migrate & seed :
 ```
-php artisan migrate
-
-# Import semua data dari Provinsi sampai Kelurahan sekaligus
-php artisan db:seed --class=IndoRegionSeeder      # Import data Provinsi, Kota/Kabupaten, Kecamatan/Distrik dan Desa/Kelurahan
-
-# Anda juga bisa melakukan Import data satu per satu, mulai dari Provinsi sampai Kelurahan
-php artisan db:seed --class=IndoRegionProvinceSeeder      # Import data provinsi
-php artisan db:seed --class=IndoRegionRegencySeeder       # Import data kota/kabupaten
-php artisan db:seed --class=IndoRegionDistrictSeeder      # Import data kecamatan/distrik
-php artisan db:seed --class=IndoRegionVillageSeeder       # Import data desa/kelurahan
+php artisan indoregion:populate
 ```
 
 ## Basic Usage
 Anda bisa gunakan class dibawah seperti model pada umum-nya.
   
-```
+```php
 <?php
 
-use App\Models\Province;
-use App\Models\Regency;
-use App\Models\District;
-use App\Models\Village;
+use AzisHapidin\IndoRegion\Models\Province;
+use AzisHapidin\IndoRegion\Models\Regency;
+use AzisHapidin\IndoRegion\Models\District;
+use AzisHapidin\IndoRegion\Models\Village;
 
 // Get semua data
 $provinces = Province::all();
@@ -91,10 +86,22 @@ $districts = District::where('name', 'LIKE', 'BANDUNG%')->get();
 $villages = Village::where('name', 'BOJONGHERANG')->first();
 
 ```
+### IndoRegion Facade
+
+```php
+<?php
+
+use IndoRegion;
+
+$provinces = IndoRegion::getAllProvince();
+
+$findProvince = IndoRegion::findProvinceById(61); // return KALIMANTAN BARAT provinces instanse 
+
+```
 
 ## Advance Usage
 
-```
+```php
 <?php
 
 // Get Kecamatan dari sebuah Provinsi.

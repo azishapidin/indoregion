@@ -25,6 +25,6 @@ class IndoRegionDistrictSeeder extends Seeder
         $districts = RawDataGetter::getDistricts();
 
         // Insert Data to Database
-        DB::table('indoregion_districts')->insert($districts);
+        DB::table(config('indoregion.table.district'))->insert($districts);
     }
 }

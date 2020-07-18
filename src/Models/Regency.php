@@ -3,11 +3,11 @@
 /*
  * This file is part of the IndoRegion package.
  *
- * (c) Azis Hapidin <azishapidin.com | azishapidin@gmail.com>
+ * (c) Ibnul Mutaki < cacing69 | ibnuul@gmail.com>
  *
  */
 
-namespace App\Models;
+namespace AzisHapidin\IndoRegion\Models;
 
 use AzisHapidin\IndoRegion\Traits\RegencyTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -19,12 +19,10 @@ class Regency extends Model
 {
     use RegencyTrait;
 
-    /**
-     * Table name.
-     *
-     * @var string
-     */
-    protected $table = 'indoregion_regencies';
+    public function getTable()
+    {
+        return config('indoregion.table.regency');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
@@ -42,7 +40,7 @@ class Regency extends Model
      */
     public function province()
     {
-        return $this->belongsTo(Province::class);
+        return $this->belongsTo(config('indoregion.models.province'));
     }
 
     /**
@@ -52,6 +50,6 @@ class Regency extends Model
      */
     public function districts()
     {
-        return $this->hasMany(District::class);
+        return $this->hasMany(config('indoregion.models.district'));
     }
 }
