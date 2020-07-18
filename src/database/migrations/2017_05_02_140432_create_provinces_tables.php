@@ -26,6 +26,11 @@ class CreateProvincesTables extends Migration
         });
     }
 
+    /**
+     * Get table name.
+     *
+     * @return string
+     */
     public function getTableName()
     {
         return config('indoregion.table.province');
