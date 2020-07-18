@@ -8,10 +8,6 @@
 
 namespace AzisHapidin\IndoRegion\Traits;
 
-
-use App\Models\District;
-use App\Models\Regency;
-
 trait ProvinceTrait
 {
     /**
@@ -21,7 +17,7 @@ trait ProvinceTrait
      */
     public function districts()
     {
-        return $this->hasManyThrough(District::class, Regency::class);
+        return $this->hasManyThrough(config('indoregion.models.district'), config('indoregion.models.regency'));
     }
 
     /**

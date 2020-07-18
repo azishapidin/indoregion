@@ -9,25 +9,51 @@
 
 namespace AzisHapidin\IndoRegion;
 
-use App\Models\Province;
-use App\Models\Regency;
-use App\Models\District;
-use App\Models\Village;
-
 class IndoRegion
 {
-    public function getProvinces()
+    private $province;
+    private $regency;
+    private $district;
+    private $village;
+
+
+    public function __construct()
     {
-        # code...
+        $this->province = app(config('indoregion.models.province'));
+        $this->regency = app(config('indoregion.models.regency'));
+        $this->district = app(config('indoregion.models.district'));
+        $this->village = app(config('indoregion.models.village'));
     }
 
-    public function searchProvinces($name = '')
+    /**
+     * get province instance.
+     *
+     * @return Province
+     */
+    public function getAllProvince()
     {
-        # code...
+        return $this->province->query()->get();
     }
 
-    public function findProvince($key = '', $value = '')
+    /**
+     * search province by name.
+     *
+     * @param String $name String of province
+     * @return items of Province 
+     */
+    public function searchProvinceByName($name = '')
     {
-        # code...
+        return $this->province->where("name", "like", "%".$name."%")->get();
+    }
+
+    /**
+     * find province by id.
+     *
+     * @param int $id Id of province
+     * @return Province 
+     */
+    public function findProvinceById($id)
+    {
+        return $this->province->find($id);
     }
 }

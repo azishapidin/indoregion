@@ -20,10 +20,15 @@ class CreateProvincesTables extends Migration
      */
     public function up()
     {
-        Schema::create('indoregion_provinces', function(Blueprint $table){
+        Schema::create($this->getTableName(), function(Blueprint $table){
             $table->char('id', 2)->index();
             $table->string('name');
         });
+    }
+
+    public function getTableName()
+    {
+        return config('indoregion.table.province');
     }
 
     /**

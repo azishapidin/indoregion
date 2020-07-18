@@ -3,16 +3,14 @@
 /*
  * This file is part of the IndoRegion package.
  *
- * (c) Azis Hapidin <azishapidin.com | azishapidin@gmail.com>
+ * (c) Ibnul Mutaki < cacing69 | ibnuul@gmail.com>
  *
  */
 
-namespace App\Models;
+namespace AzisHapidin\IndoRegion\Models;
 
 use AzisHapidin\IndoRegion\Traits\DistrictTrait;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Regency;
-use App\Models\Village;
 
 /**
  * District Model.
@@ -21,12 +19,10 @@ class District extends Model
 {
     use DistrictTrait;
 
-    /**
-     * Table name.
-     *
-     * @var string
-     */
-    protected $table = 'indoregion_districts';
+    public function getTable()
+    {
+        return config('indoregion.table.district');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
@@ -44,7 +40,7 @@ class District extends Model
      */
     public function regency()
     {
-        return $this->belongsTo(Regency::class);
+        return $this->belongsTo(config('indoregion.models.regency'));
     }
 
     /**
@@ -54,6 +50,6 @@ class District extends Model
      */
     public function villages()
     {
-        return $this->hasMany(Village::class);
+        return $this->hasMany(config('indoregion.models.village'));
     }
 }

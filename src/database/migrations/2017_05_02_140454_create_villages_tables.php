@@ -20,11 +20,16 @@ class CreateVillagesTables extends Migration
      */
     public function up()
     {
-        Schema::create('indoregion_villages', function(Blueprint $table){
+        Schema::create($this->getTableName(), function(Blueprint $table){
             $table->char('id', 10)->index();
             $table->char('district_id', 7);
             $table->string('name', 50);
         });
+    }
+
+    public function getTableName()
+    {
+        return config('indoregion.table.village');
     }
 
     /**
