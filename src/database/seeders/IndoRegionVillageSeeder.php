@@ -31,7 +31,7 @@ class IndoRegionVillageSeeder extends Seeder
             $collection = collect($villages);
             $parts = $collection->chunk(1000);
             foreach ($parts as $subset) {
-                DB::table('indoregion_villages')->insert($subset->toArray());
+                DB::table('villages')->insert($subset->toArray());
             }
         });
     }

@@ -27,6 +27,6 @@ class IndoRegionRegencySeeder extends Seeder
         $regencies = RawDataGetter::getRegencies();
 
         // Insert Data to Database
-        DB::table('indoregion_regencies')->insert($regencies);
+        DB::table('regencies')->insert($regencies);
     }
 }

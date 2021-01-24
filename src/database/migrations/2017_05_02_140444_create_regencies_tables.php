@@ -20,7 +20,7 @@ class CreateRegenciesTables extends Migration
      */
     public function up()
     {
-        Schema::create('indoregion_regencies', function(Blueprint $table){
+        Schema::create('regencies', function(Blueprint $table){
             $table->char('id', 4)->index();
             $table->char('province_id', 2);
             $table->string('name', 50);
@@ -34,6 +34,6 @@ class CreateRegenciesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('indoregion_regencies');
+        Schema::drop('regencies');
     }
 }

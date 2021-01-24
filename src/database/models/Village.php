@@ -25,7 +25,7 @@ class Village extends Model
      *
      * @var string
      */
-    protected $table = 'indoregion_villages';
+    protected $table = 'villages';
 
     /**
      * The attributes that should be hidden for arrays.
