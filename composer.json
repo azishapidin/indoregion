@@ -17,6 +17,10 @@
         {
             "name": "Azis Hapidin",
             "email": "azishapidin@gmail.com"
+        },
+        {
+            "name": "cacing69",
+            "email": "cacingworm69@gmail.com"
         }
     ],
     "require": {
@@ -31,10 +35,6 @@
         },
         "files": [
             "src/RawDataGetter.php"
-        ],
-        "classmaps" : [
-            "database/seeds",
-            "database/migrations"
         ]
     },
     "extra": {
@@ -42,9 +42,7 @@
             "providers": [
                 "AzisHapidin\\IndoRegion\\IndoRegionServiceProvider"
             ],
-            "aliases": {
-                "IndoRegion": "AzisHapidin\\IndoRegion\\Facades\\IndoRegionFacade"
-            }
+            "aliases": {}
         }
     },
     "homepage": "https://azishapidin.com/",
