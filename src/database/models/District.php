@@ -26,7 +26,7 @@ class District extends Model
      *
      * @var string
      */
-    protected $table = 'indoregion_districts';
+    protected $table = 'districts';
 
     /**
      * The attributes that should be hidden for arrays.

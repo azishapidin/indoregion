@@ -7,10 +7,12 @@
  *
  */
 
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use AzisHapidin\IndoRegion\RawDataGetter;
+use Illuminate\Support\Facades\DB;
 
-class IndoRegionProvinceSeeder extends Seeder
+class IndoRegionRegencySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,9 +24,9 @@ class IndoRegionProvinceSeeder extends Seeder
     public function run()
     {
         // Get Data
-        $provinces = RawDataGetter::getProvinces();
+        $regencies = RawDataGetter::getRegencies();
 
         // Insert Data to Database
-        DB::table('indoregion_provinces')->insert($provinces);
+        DB::table('regencies')->insert($regencies);
     }
 }

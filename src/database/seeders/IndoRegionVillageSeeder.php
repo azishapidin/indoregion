@@ -7,8 +7,10 @@
  *
  */
 
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use AzisHapidin\IndoRegion\RawDataGetter;
+use Illuminate\Support\Facades\DB;
 
 class IndoRegionVillageSeeder extends Seeder
 {
@@ -29,7 +31,7 @@ class IndoRegionVillageSeeder extends Seeder
             $collection = collect($villages);
             $parts = $collection->chunk(1000);
             foreach ($parts as $subset) {
-                DB::table('indoregion_villages')->insert($subset->toArray());
+                DB::table('villages')->insert($subset->toArray());
             }
         });
     }

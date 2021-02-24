@@ -24,7 +24,7 @@ class Regency extends Model
      *
      * @var string
      */
-    protected $table = 'indoregion_regencies';
+    protected $table = 'regencies';
 
     /**
      * The attributes that should be hidden for arrays.
