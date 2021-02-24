@@ -103,6 +103,6 @@ class IndoRegionPublishCommand extends Command
      */
     protected function publishSeeds()
     {
-        $this->publishDirectory(__DIR__.'/database/seeds/', app()->databasePath()."/seeds/");
+        $this->publishDirectory(__DIR__.'/database/seeders/', app()->databasePath()."/seeders/");
     }
 }
