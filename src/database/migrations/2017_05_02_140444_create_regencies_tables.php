@@ -24,6 +24,10 @@ class CreateRegenciesTables extends Migration
             $table->char('id', 4)->index();
             $table->char('province_id', 2);
             $table->string('name', 50);
+            $table->foreign('province_id')
+                ->references('id')
+                ->on('provinces')
+                ->onUpdate('cascade')->onDelete('restrict');
         });
     }
 
@@ -44,6 +48,6 @@ class CreateRegenciesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('indoregion_regencies');
+        Schema::drop('regencies');
     }
 }

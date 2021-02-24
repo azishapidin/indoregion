@@ -24,6 +24,10 @@ class CreateDistrictsTables extends Migration
             $table->char('id', 7)->index();
             $table->char('regency_id', 4);
             $table->string('name', 50);
+            $table->foreign('regency_id')
+                ->references('id')
+                ->on('regencies')
+                ->onUpdate('cascade')->onDelete('restrict');
         });
     }
 
@@ -44,6 +48,6 @@ class CreateDistrictsTables extends Migration
      */
     public function down()
     {
-        Schema::drop('indoregion_districts');
+        Schema::drop('districts');
     }
 }

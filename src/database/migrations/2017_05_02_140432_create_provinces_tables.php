@@ -43,6 +43,6 @@ class CreateProvincesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('indoregion_provinces');
+        Schema::drop('provinces');
     }
 }
