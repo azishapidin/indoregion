@@ -8,6 +8,7 @@
  */
 
 namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use AzisHapidin\IndoRegion\RawDataGetter;
 use Illuminate\Support\Facades\DB;

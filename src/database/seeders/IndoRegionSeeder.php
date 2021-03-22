@@ -7,6 +7,8 @@
  *
  */
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class IndoRegionSeeder extends Seeder
