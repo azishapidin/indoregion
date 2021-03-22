@@ -14,6 +14,13 @@ Buka Command Line kemudian jalankan perintah dibawah untuk melakukan instalasi p
 composer require azishapidin/indoregion
 ```
 
+## Supported Versions
+
+| Laravel Version | Version | Composer Installation |
+|---- |----|----|
+| 8 | >= 3 | ```composer require azishapidin/indoregion``` |
+| 7 & 6 | 2.2.2 |  ```composer require azishapidin/indoregion:2.2.2``` |
+
 ### Register Service Provider
 
 #### Laravel
