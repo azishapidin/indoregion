@@ -80,7 +80,8 @@ class RawDataGetter
      */
     public static function getCsvData($path = '')
     {
-        $csv = new Csv($path);
+        $csv = new Csv();
+        $csv->auto($path);
 
         return $csv->data;
     }
