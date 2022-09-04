@@ -22,6 +22,6 @@ class IndoRegionServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        //
+        $this->app->singleton(Contracts\IndoRegionResolver::class, Actions\IndoRegionResolver::class);
     }
 }

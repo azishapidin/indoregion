@@ -2,7 +2,11 @@
 
 namespace Dicibi\IndoRegion\Tests\Feature;
 
+use Dicibi\IndoRegion\Contracts\IndoRegionResolver;
 use Dicibi\IndoRegion\Models\Province;
+use Illuminate\Pagination\CursorPaginator;
+use function PHPUnit\Framework\assertCount;
+use function PHPUnit\Framework\assertInstanceOf;
 use function PHPUnit\Framework\assertNotEmpty;
 use function PHPUnit\Framework\assertNotSame;
 use function PHPUnit\Framework\assertSame;
@@ -23,7 +27,7 @@ it('can retrieve regencies from province', function () {
     /** @var \Dicibi\IndoRegion\Models\Regency $regency */
     $regency = $province->regencies()->first();
 
-    assertSame($province->id, (int) $regency->province_id);
+    assertSame($province->id, (int)$regency->province_id);
 });
 
 it('can retrieve district from province', function () {
@@ -36,4 +40,17 @@ it('can retrieve district from province', function () {
     $district = $province->districts()->first();
 
     assertTrue($province->regencies()->where('id', $district->regency_id)->exists());
+});
+
+it('can retrieve provinces from action', function () {
+    /** @var IndoRegionResolver $action */
+    $action = app()->get(IndoRegionResolver::class);
+
+    $pagination = $action->getProvinces();
+
+    assertInstanceOf(CursorPaginator::class, $pagination);
+
+    $pagination = $action->getProvinces('Jawa');
+
+    assertCount(3, $pagination->items());
 });

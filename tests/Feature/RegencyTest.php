@@ -2,7 +2,12 @@
 
 namespace Dicibi\IndoRegion\Tests\Feature;
 
+use Dicibi\IndoRegion\Contracts\IndoRegionResolver;
+use Dicibi\IndoRegion\Models\Province;
 use Dicibi\IndoRegion\Models\Regency;
+use Illuminate\Pagination\CursorPaginator;
+use function PHPUnit\Framework\assertCount;
+use function PHPUnit\Framework\assertInstanceOf;
 use function PHPUnit\Framework\assertNotEmpty;
 use function PHPUnit\Framework\assertSame;
 use function PHPUnit\Framework\assertTrue;
@@ -36,4 +41,21 @@ it('can retrieve villages', function () {
     $village = $regency->villages()->first();
 
     assertTrue($regency->districts()->where('id', $village->district_id)->exists());
+});
+
+it('can retrieve regency from actions', function () {
+    // jawa timur
+    /** @var Province $province */
+    $province = Province::query()->find(35);
+
+    /** @var IndoRegionResolver $action */
+    $action = app()->get(IndoRegionResolver::class);
+
+    $pagination = $action->getRegencies($province);
+
+    assertInstanceOf(CursorPaginator::class, $pagination);
+
+    $pagination = $action->getRegencies($province, 'Surabaya');
+
+    assertCount(1, $pagination->items());
 });
