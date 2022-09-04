@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Relations;
  * @property  \Dicibi\IndoRegion\Models\Province $province
  * @property  \Illuminate\Database\Eloquent\Collection<int, \Dicibi\IndoRegion\Models\District> $districts
  * @property  \Illuminate\Database\Eloquent\Collection<int, \Dicibi\IndoRegion\Models\District> $villages
- * @property  int $province_id
+ * @property  int|string $province_id
  * @property  int $id
  */
 class Regency extends Model

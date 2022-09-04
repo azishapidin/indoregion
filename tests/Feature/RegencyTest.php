@@ -23,7 +23,7 @@ it('can retrieve districts', function () {
     /** @var \Dicibi\IndoRegion\Models\District $district */
     $district = $regency->districts()->first();
 
-    assertSame($district->regency_id, $regency->id);
+    assertSame((int) $district->regency_id, $regency->id);
 });
 
 it('can retrieve villages', function () {

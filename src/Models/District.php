@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Relations;
  * @property  string $name
  * @property  Regency $regency
  * @property  \Illuminate\Database\Eloquent\Collection<int, \Dicibi\IndoRegion\Models\Village> $villages
- * @property  int $regency_id
+ * @property  int|string $regency_id
  */
 class District extends Model
 {

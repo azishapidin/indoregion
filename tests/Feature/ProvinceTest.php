@@ -23,7 +23,7 @@ it('can retrieve regencies from province', function () {
     /** @var \Dicibi\IndoRegion\Models\Regency $regency */
     $regency = $province->regencies()->first();
 
-    assertSame($province->id, $regency->province_id);
+    assertSame($province->id, (int) $regency->province_id);
 });
 
 it('can retrieve district from province', function () {
