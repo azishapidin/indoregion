@@ -11,7 +11,6 @@ use Illuminate\Contracts\Pagination\CursorPaginator;
 
 class IndoRegionResolver implements IndoRegionResolverContract
 {
-
     public function getProvinces(?string $searchQuery = null): CursorPaginator
     {
         $query = Province::query();
