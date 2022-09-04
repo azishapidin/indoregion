@@ -3,7 +3,10 @@
 namespace Dicibi\IndoRegion\Tests\Feature;
 
 use Dicibi\IndoRegion\Models\Province;
-use function PHPUnit\Framework\{assertNotEmpty, assertNotSame, assertSame, assertTrue};
+use function PHPUnit\Framework\assertNotEmpty;
+use function PHPUnit\Framework\assertNotSame;
+use function PHPUnit\Framework\assertSame;
+use function PHPUnit\Framework\assertTrue;
 
 it('can retrieve provinces', function () {
     $provinceQuery = Province::query();

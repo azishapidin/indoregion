@@ -12,7 +12,6 @@ namespace Dicibi\IndoRegion\Database\Seeders;
 use Dicibi\IndoRegion\Models\District;
 use Dicibi\IndoRegion\RawDataGetter;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class IndoRegionDistrictSeeder extends Seeder
 {

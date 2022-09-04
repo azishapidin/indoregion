@@ -3,7 +3,8 @@
 namespace Dicibi\IndoRegion\Tests\Feature;
 
 use Dicibi\IndoRegion\Models\District;
-use function PHPUnit\Framework\{assertNotEmpty, assertTrue};
+use function PHPUnit\Framework\assertNotEmpty;
+use function PHPUnit\Framework\assertTrue;
 
 it('can retrieve regency', function () {
     /** @var District $district */

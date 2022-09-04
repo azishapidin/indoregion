@@ -7,15 +7,15 @@
  *
  */
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('id_villages', static function(Blueprint $table){
+        Schema::create('id_villages', static function (Blueprint $table) {
             $table->unsignedBigInteger('id')->primary();
             $table->foreignId('district_id')
                 ->constrained('id_districts')
