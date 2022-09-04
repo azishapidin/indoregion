@@ -7,82 +7,55 @@
  *
  */
 
-namespace AzisHapidin\IndoRegion;
+namespace Dicibi\IndoRegion;
 
-use ParseCsv\Csv;
+use Iterator;
+use League\Csv\Reader;
 
-/**
- * Get raw data from CSV Files on /src/data/csv.
- */
 class RawDataGetter
 {
-    /**
-     * Raw Data file path.
-     *
-     * @return string
-     */
-    protected static $path = __DIR__.'/data/csv';
+    protected static string $path = __DIR__.'/../database/data/csv/';
 
     /**
-     * Get provinces data.
-     *
-     * @return array
+     * @throws \League\Csv\Exception
      */
-    public static function getProvinces()
+    public static function getProvinces(): Iterator
     {
-        $result = self::getCsvData(self::$path.'/provinces.csv');
-
-        return $result;
+        return self::getCsvData(self::$path.'provinces.csv');
     }
 
     /**
-     * Get regencies data.
-     *
-     * @return array
+     * @throws \League\Csv\Exception
      */
-    public static function getRegencies()
+    public static function getRegencies(): Iterator
     {
-        $result = self::getCsvData(self::$path.'/regencies.csv');
-
-        return $result;
+        return self::getCsvData(self::$path.'regencies.csv');
     }
 
     /**
-     * Get districts data.
-     *
-     * @return array
+     * @throws \League\Csv\Exception
      */
-    public static function getDistricts()
+    public static function getDistricts(): Iterator
     {
-        $result = self::getCsvData(self::$path.'/districts.csv');
-
-        return $result;
+        return self::getCsvData(self::$path.'districts.csv');
     }
 
     /**
-     * Get villages data.
-     *
-     * @return array
+     * @throws \League\Csv\Exception
      */
-    public static function getVillages()
+    public static function getVillages(): Iterator
     {
-        $result = self::getCsvData(self::$path.'/villages.csv');
-
-        return $result;
+        return self::getCsvData(self::$path.'villages.csv');
     }
 
     /**
-     * Get Data from CSV.
-     *
-     * @param string $path File Path.
-     *
-     * @return array
+     * @throws \League\Csv\Exception
      */
-    public static function getCsvData($path = '')
+    public static function getCsvData(string $path): Iterator
     {
-        $csv = new Csv();
-        $csv->auto($path);
+        $csv = Reader::createFromPath($path);
+        $csv->setHeaderOffset(0);
 
-        return $csv->data;
+        return $csv->getRecords();
     }
 }

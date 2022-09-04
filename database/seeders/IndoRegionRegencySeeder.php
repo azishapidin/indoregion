@@ -7,27 +7,26 @@
  *
  */
 
-namespace Database\Seeders;
+namespace Dicibi\IndoRegion\Database\Seeders;
 
+use Dicibi\IndoRegion\Models\Regency;
+use Dicibi\IndoRegion\RawDataGetter;
 use Illuminate\Database\Seeder;
-use AzisHapidin\IndoRegion\RawDataGetter;
 use Illuminate\Support\Facades\DB;
 
 class IndoRegionRegencySeeder extends Seeder
 {
     /**
-     * Run the database seeds.
-     *
-     * @deprecated
-     * 
-     * @return void
+     * @throws \League\Csv\Exception
      */
-    public function run()
+    public function run(): void
     {
         // Get Data
         $regencies = RawDataGetter::getRegencies();
 
         // Insert Data to Database
-        DB::table('regencies')->insert($regencies);
+        foreach ($regencies as $regency) {
+            Regency::query()->create($regency);
+        }
     }
 }

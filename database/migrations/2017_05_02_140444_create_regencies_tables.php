@@ -1,0 +1,31 @@
+<?php
+
+/*
+ * This file is part of the IndoRegion package.
+ *
+ * (c) Azis Hapidin <azishapidin.com | azishapidin@gmail.com>
+ *
+ */
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+return new class extends Migration {
+    public function up(): void
+    {
+        Schema::create('id_regencies', static function (Blueprint $table) {
+            $table->unsignedBigInteger('id')->primary();
+            $table->foreignId('province_id')
+                ->constrained('id_provinces')
+                ->cascadeOnUpdate()
+                ->restrictOnDelete();
+            $table->string('name', 50);
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::drop('regencies');
+    }
+};

@@ -7,37 +7,21 @@
  *
  */
 
-namespace AzisHapidin\IndoRegion;
+namespace Dicibi\IndoRegion;
 
 use Illuminate\Support\ServiceProvider;
-use AzisHapidin\IndoRegion\IndoRegionPublishCommand;
 
-/**
- * IndoRegion Service Provider
- */
 class IndoRegionServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
-            $this->commands([
-                IndoRegionPublishCommand::class,
-            ]);
+            $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         }
     }
 
-    /**
-     * Register the application services.
-     *
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
-        
+        //
     }
 }

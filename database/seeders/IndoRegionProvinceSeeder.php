@@ -7,27 +7,29 @@
  *
  */
 
-namespace Database\Seeders;
+namespace Dicibi\IndoRegion\Database\Seeders;
 
+use Dicibi\IndoRegion\Models\Province;
+use Dicibi\IndoRegion\RawDataGetter;
 use Illuminate\Database\Seeder;
-use AzisHapidin\IndoRegion\RawDataGetter;
-use Illuminate\Support\Facades\DB;
 
 class IndoRegionProvinceSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      *
-     * @deprecated
-     * 
      * @return void
+     *
+     * @throws \League\Csv\Exception
      */
-    public function run()
+    public function run(): void
     {
         // Get Data
         $provinces = RawDataGetter::getProvinces();
 
         // Insert Data to Database
-        DB::table('provinces')->insert($provinces);
+        foreach ($provinces as $province) {
+            Province::query()->create($province);
+        }
     }
 }

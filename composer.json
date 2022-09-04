@@ -1,5 +1,5 @@
 {
-    "name": "azishapidin/indoregion",
+    "name": "dicibi/indoregion",
     "description": "Package containing region of Indonesia (provinces, regencies, districts, and villages) for Laravel",
     "license": "MIT",
     "keywords": [
@@ -24,27 +24,49 @@
         }
     ],
     "require": {
-        "parsecsv/php-parsecsv": "^1.1"
+        "php": "^8.0",
+        "illuminate/support": "^8.0|^9.0",
+        "illuminate/console": "^8.0|^9.0",
+        "illuminate/database": "^8.0|^9.0",
+        "league/csv": "^9.8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.8.*"
+        "roave/security-advisories": "dev-latest",
+        "orchestra/testbench": "^7.7",
+        "laravel/pint": "^1.1",
+        "pestphp/pest": "^1.22"
     },
     "autoload": {
         "psr-4": {
-            "AzisHapidin\\IndoRegion\\": "src/"
-        },
-        "files": [
-            "src/RawDataGetter.php"
+            "Dicibi\\IndoRegion\\": "src/",
+            "Dicibi\\IndoRegion\\Database\\Seeders\\":  "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dicibi\\IndoRegion\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
         ]
     },
+    "minimum-stability": "stable",
     "extra": {
         "laravel": {
             "providers": [
-                "AzisHapidin\\IndoRegion\\IndoRegionServiceProvider"
+                "Dicibi\\IndoRegion\\IndoRegionServiceProvider"
             ],
             "aliases": {}
         }
     },
     "homepage": "https://azishapidin.com/",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
 }

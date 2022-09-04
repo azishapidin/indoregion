@@ -7,7 +7,7 @@
  *
  */
 
-namespace Database\Seeders;
+namespace Dicibi\IndoRegion\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
@@ -18,7 +18,7 @@ class IndoRegionSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         $this->call(IndoRegionProvinceSeeder::class);
         $this->call(IndoRegionRegencySeeder::class);
