@@ -14,15 +14,15 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          - php-version: 8.1
-          - tools: composer:v2
-          - coverage: xdebug
+          php-version: 8.1
+          tools: composer:v2
+          coverage: xdebug
       - name: Install PHP Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --ignore-platform-reqs
       - name: Run Laravel Pint for CS Fixer
         run: ./vendor/bin/pint --config pint.json
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          - commit_user_name: 'dicibibot'
-          - commit_user_email: 'dicibiofficial@gmail.com'
-          - commit_message: "bot: cs fix"
+          commit_user_name: 'dicibibot'
+          commit_user_email: 'dicibiofficial@gmail.com'
+          commit_message: "bot: cs fix"
