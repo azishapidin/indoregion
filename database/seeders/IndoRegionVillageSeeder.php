@@ -24,8 +24,8 @@ class IndoRegionVillageSeeder extends Seeder
         $villages = RawDataGetter::getVillages();
 
         // Insert Data with Chunk
-        foreach ($villages as $village) {
-            Village::query()->create($village);
-        }
+        collect($villages)->chunk(100)->each(function ($chunk) {
+            Village::query()->insert($chunk->toArray());
+        });
     }
 }
