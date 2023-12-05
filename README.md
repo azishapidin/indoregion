@@ -1,66 +1,70 @@
-# azishapidin/indoregion
-[![Build Status](https://travis-ci.org/azishapidin/indoregion.svg?branch=master)](https://travis-ci.org/azishapidin/indoregion) [![StyleCI](https://styleci.io/repos/90970565/shield?branch=master)](https://styleci.io/repos/90970565) [![License](https://poser.pugx.org/azishapidin/indoregion/license)](https://packagist.org/packages/azishapidin/indoregion) [![Latest Stable Version](https://poser.pugx.org/azishapidin/indoregion/v/stable)](https://packagist.org/packages/azishapidin/indoregion) [![Total Downloads](https://poser.pugx.org/azishapidin/indoregion/downloads)](https://packagist.org/packages/azishapidin/indoregion)
+# nurfachmi/indonesia
 
-```azishapidin/indoregion``` adalah sebuah package Laravel untuk menyimpan data wilayah Indonesia mulai dari Provinsi, Kabupaten/Kota, Kecamatan/Distrik, sampai Desa/Kelurahan. Package akan menambahkan migrations, seeder (untuk import data ke database) dan Model pada project Anda.
+[![Build Status](https://travis-ci.org/nurfachmi/indonesia.svg?branch=master)](https://travis-ci.org/nurfachmi/indonesia) [![StyleCI](https://styleci.io/repos/90970565/shield?branch=master)](https://styleci.io/repos/90970565) [![License](https://poser.pugx.org/nurfachmi/indonesia/license)](https://packagist.org/packages/nurfachmi/indonesia) [![Latest Stable Version](https://poser.pugx.org/nurfachmi/indonesia/v/stable)](https://packagist.org/packages/nurfachmi/indonesia) [![Total Downloads](https://poser.pugx.org/nurfachmi/indonesia/downloads)](https://packagist.org/packages/nurfachmi/indonesia)
+
+`nurfachmi/indonesia` (fork [azishapidin/indoregion](https://github.com/azishapidin/indoregion)) adalah sebuah package Laravel untuk menyimpan data wilayah Indonesia mulai dari Provinsi, Kabupaten/Kota, Kecamatan/Distrik, sampai Desa/Kelurahan. Package akan menambahkan migrations, seeder (untuk import data ke database) dan Model pada project Anda.
 
 Semua data akan disimpan di database, untuk mengambil data tersebut sama dengan mengambil data lewat Model pada umum-nya (Lihat bagian Usage).
-
-Data ini diambil dari situs Pemutakhiran MFD dan MBS Badan Pusat Statistik (http://mfdonline.bps.go.id/) pada 11 Januari 2018. Sumber: [https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia](https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia)
 
 ## Quick Instalation
 
 Buka Command Line kemudian jalankan perintah dibawah untuk melakukan instalasi package:
+
 ```
-composer require azishapidin/indoregion
+composer require nurfachmi/indonesia
 ```
 
 ## Supported Versions
 
-| Laravel Version | Version | Composer Installation |
-|---- |----|----|
-| 8 | >= 3 | ```composer require azishapidin/indoregion``` |
-| 7 & 6 | 2.2.2 |  ```composer require azishapidin/indoregion:2.2.2``` |
+| Laravel Version | Version | Composer Installation                        |
+| --------------- | ------- | -------------------------------------------- |
+| 10              | 1.0.0   | `composer require nurfachmi/indonesia`       |
 
 ### Register Service Provider
 
 #### Laravel
 
-Jika Anda menggunakan Laravel versi 5.5 keatas Anda bisa skip bagian ini karena package indoregion sudah menggunakan Package Auto Discovery.  
-  
-Tapi jika kebetulan Project yang Anda kerjakan masih menggunakan versi dibawah 5.5 maka silahkan untuk membuka file **config/app.php** lalu tambahkan Class ```IndoRegionServiceProvider``` kedalam array Service Providers:
+Jika Anda menggunakan Laravel versi 5.5 keatas Anda bisa skip bagian ini karena package indoregion sudah menggunakan Package Auto Discovery.
+
+Tapi jika kebetulan Project yang Anda kerjakan masih menggunakan versi dibawah 5.5 maka silahkan untuk membuka file **config/app.php** lalu tambahkan Class `IndoRegionServiceProvider` kedalam array Service Providers:
+
 ```
 // Provider Lain
-AzisHapidin\IndoRegion\IndoRegionServiceProvider::class,
+Nurfachmi\Indonesia\IndoRegionServiceProvider::class,
 ```
 
 #### Lumen
 
-Jika Anda ingin menggunakan Package ini pada project Lumen, maka Anda harus melakukan register Service Provider pada file ```bootstrap/app.php``` dengan menambahkan ini:
+Jika Anda ingin menggunakan Package ini pada project Lumen, maka Anda harus melakukan register Service Provider pada file `bootstrap/app.php` dengan menambahkan ini:
 
 ```
-$app->register(AzisHapidin\IndoRegion\IndoRegionServiceProvider::class);
+$app->register(Nurfachmi\Indonesia\IndoRegionServiceProvider::class);
 ```
 
 ### Publish File
+
 Jalankan perintah dibawah di Command Line:
 
 ```
 php artisan indoregion:publish
-``` 
-  
+```
+
 Saat perintah diatas dijalankan, indoregion akan menyalin:
 
-* Files migration dari ```/packages/azishapidin/indoregion/src/database/migrations``` ke ```/database/migrations```
-* Files seeder dari ```/packages/azishapidin/indoregion/src/database/seeds``` ke ```/database/seeds```
-* Files model dari ```/packages/azishapidin/indoregion/src/database/models``` ke ```/app/Models```
+- Files migration dari `/vendor/nurfachmi/indonesia/src/database/migrations` ke `/database/migrations`
+- Files seeder dari `/vendor/nurfachmi/indonesia/src/database/seeds` ke `/database/seeds`
+- Files model dari `/vendor/nurfachmi/indonesia/src/database/models` ke `/app/Models`
 
 Setelah itu jalankan perintah dibawah:
+
 ```
 composer dump-autoload
 ```
 
 ### Migrate and Seeder
+
 Jalankan perintah dibawah untuk menjalankan migration dan seeder:
+
 ```
 php artisan migrate
 
@@ -75,8 +79,9 @@ php artisan db:seed --class=IndoRegionVillageSeeder       # Import data desa/kel
 ```
 
 ## Basic Usage
+
 Anda bisa gunakan class dibawah seperti model pada umum-nya.
-  
+
 ```
 <?php
 
