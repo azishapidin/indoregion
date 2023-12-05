@@ -1,20 +1,13 @@
 <?php
 
-/*
- * This file is part of the IndoRegion package.
- *
- * (c) Azis Hapidin <azishapidin.com | azishapidin@gmail.com>
- *
- */
-
-namespace AzisHapidin\IndoRegion;
+namespace Nurfachmi\Indonesia;
 
 use App\Models\Province;
 use App\Models\Regency;
 use App\Models\District;
 use App\Models\Village;
 
-class IndoRegion
+class Indonesia
 {
     public function getProvinces()
     {

@@ -1,12 +1,6 @@
 <?php
-/*
- * This file is part of the IndoRegion package.
- *
- * (c) Ibnul Mutaki <cacing69 | cacingworm@gmail.com>
- *
- */
 
-namespace AzisHapidin\IndoRegion;
+namespace Nurfachmi\Indonesia;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -25,7 +19,7 @@ class IndoRegionPublishCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Publish IndoRegion assets from vendor packages';
+    protected $description = 'Publish Indonesia assets from vendor packages';
 
     /**
      * Compatiblity for Lumen 5.5.
@@ -48,7 +42,7 @@ class IndoRegionPublishCommand extends Command
         $this->publishMigrations();
         $this->publishSeeds();
 
-        $this->info("Publishing IndoRegion complete");
+        $this->info("Publishing Indonesia complete");
     }
 
 

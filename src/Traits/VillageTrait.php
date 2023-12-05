@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Cacing
- * Date: 24/08/2019
- * Time: 23:31
- */
 
-namespace AzisHapidin\IndoRegion\Traits;
-
+namespace Nurfachmi\Indonesia\Traits;
 
 trait VillageTrait
 {

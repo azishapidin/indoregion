@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Cacing
- * Date: 18/07/2019
- * Time: 0:44
- */
 
-namespace AzisHapidin\IndoRegion\Traits;
-
+namespace Nurfachmi\Indonesia\Traits;
 
 use App\Models\District;
 use App\Models\Regency;

@@ -1,15 +1,8 @@
 <?php
 
-/*
- * This file is part of the IndoRegion package.
- *
- * (c) Azis Hapidin <azishapidin.com | azishapidin@gmail.com>
- *
- */
-
 namespace App\Models;
 
-use AzisHapidin\IndoRegion\Traits\DistrictTrait;
+use Nurfachmi\Indonesia\Traits\DistrictTrait;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Regency;
 use App\Models\Village;

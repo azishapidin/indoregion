@@ -1,50 +1,54 @@
 {
-    "name": "azishapidin/indoregion",
-    "description": "Package containing region of Indonesia (provinces, regencies, districts, and villages) for Laravel",
-    "license": "MIT",
-    "keywords": [
-        "laravel",
-        "php",
-        "csv",
-        "indonesia",
-        "provinces",
-        "regencies",
-        "districts",
-        "villages",
-        "region"
-    ],
-    "authors": [
-        {
-            "name": "Azis Hapidin",
-            "email": "azishapidin@gmail.com"
-        },
-        {
-            "name": "cacing69",
-            "email": "cacingworm69@gmail.com"
-        }
-    ],
-    "require": {
-        "parsecsv/php-parsecsv": "^1.1"
+  "name": "nurfachmi/indonesia",
+  "description": "Package containing region of Indonesia (provinces, regencies, districts, and villages) for Laravel",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "php",
+    "csv",
+    "indonesia",
+    "provinces",
+    "regencies",
+    "districts",
+    "villages",
+    "region"
+  ],
+  "authors": [
+    {
+      "name": "Azis Hapidin",
+      "email": "azishapidin@gmail.com"
     },
-    "require-dev": {
-        "phpunit/phpunit": "4.8.*"
+    {
+      "name": "cacing69",
+      "email": "cacingworm69@gmail.com"
     },
-    "autoload": {
-        "psr-4": {
-            "AzisHapidin\\IndoRegion\\": "src/"
-        },
-        "files": [
-            "src/RawDataGetter.php"
-        ]
+    {
+      "name": "Reza Nurfachmi",
+      "email": "reza@nurfachmi.com"
+    }
+  ],
+  "require": {
+    "parsecsv/php-parsecsv": "^1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nurfachmi\\Indonesia\\": "src/"
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "AzisHapidin\\IndoRegion\\IndoRegionServiceProvider"
-            ],
-            "aliases": {}
-        }
-    },
-    "homepage": "https://azishapidin.com/",
-    "prefer-stable": true
+    "files": [
+      "src/RawDataGetter.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Nurfachmi\\Indonesia\\IndoRegionServiceProvider"
+      ],
+      "aliases": {}
+    }
+  },
+  "homepage": "https://indonesia.nurfachmi.com/",
+  "prefer-stable": true
 }
