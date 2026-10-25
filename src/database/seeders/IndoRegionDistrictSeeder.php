@@ -22,7 +22,7 @@ class IndoRegionDistrictSeeder extends Seeder
      * 
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         // Get Data
         $districts = RawDataGetter::getDistricts();

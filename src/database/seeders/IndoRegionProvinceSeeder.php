@@ -22,7 +22,7 @@ class IndoRegionProvinceSeeder extends Seeder
      * 
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         // Get Data
         $provinces = RawDataGetter::getProvinces();

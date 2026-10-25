@@ -11,6 +11,8 @@ namespace App\Models;
 
 use AzisHapidin\IndoRegion\Traits\RegencyTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Regency Model.
@@ -27,6 +29,27 @@ class Regency extends Model
     protected $table = 'regencies';
 
     /**
+     * The data type of the primary key ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
@@ -40,7 +63,7 @@ class Regency extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function province()
+    public function province(): BelongsTo
     {
         return $this->belongsTo(Province::class);
     }
@@ -50,7 +73,7 @@ class Regency extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function districts()
+    public function districts(): HasMany
     {
         return $this->hasMany(District::class);
     }

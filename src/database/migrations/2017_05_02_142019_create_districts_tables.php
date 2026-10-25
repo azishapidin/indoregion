@@ -11,18 +11,18 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDistrictsTables extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('districts', function(Blueprint $table){
-            $table->char('id', 7)->index();
-            $table->char('regency_id', 4);
+            $table->char('id', 6)->primary();
+            $table->char('regency_id', 4)->index();
             $table->string('name', 50);
             $table->foreign('regency_id')
                 ->references('id')
@@ -36,8 +36,8 @@ class CreateDistrictsTables extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::drop('districts');
+        Schema::dropIfExists('districts');
     }
-}
+};

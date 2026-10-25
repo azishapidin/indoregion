@@ -22,7 +22,7 @@ class IndoRegionRegencySeeder extends Seeder
      * 
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         // Get Data
         $regencies = RawDataGetter::getRegencies();

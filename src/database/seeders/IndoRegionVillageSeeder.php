@@ -22,7 +22,7 @@ class IndoRegionVillageSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         // Get Data
         $villages = RawDataGetter::getVillages();

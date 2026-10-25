@@ -11,6 +11,8 @@ namespace App\Models;
 
 use AzisHapidin\IndoRegion\Traits\DistrictTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Regency;
 use App\Models\Village;
 
@@ -29,6 +31,27 @@ class District extends Model
     protected $table = 'districts';
 
     /**
+     * The data type of the primary key ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
@@ -42,7 +65,7 @@ class District extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function regency()
+    public function regency(): BelongsTo
     {
         return $this->belongsTo(Regency::class);
     }
@@ -52,7 +75,7 @@ class District extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function villages()
+    public function villages(): HasMany
     {
         return $this->hasMany(Village::class);
     }

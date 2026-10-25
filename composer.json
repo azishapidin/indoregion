@@ -24,10 +24,15 @@
         }
     ],
     "require": {
-        "parsecsv/php-parsecsv": "^1.1"
+        "php": "^8.2",
+        "illuminate/console": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "parsecsv/php-parsecsv": "^1.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.8.*"
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^11.5|^12.5|^13.0"
     },
     "autoload": {
         "psr-4": {
@@ -36,6 +41,11 @@
         "files": [
             "src/RawDataGetter.php"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AzisHapidin\\IndoRegion\\Tests\\": "tests/"
+        }
     },
     "extra": {
         "laravel": {
