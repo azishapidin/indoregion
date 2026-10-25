@@ -24,15 +24,15 @@
         }
     ],
     "require": {
-        "php": "^8.3",
-        "illuminate/console": "^13.0",
-        "illuminate/database": "^13.0",
-        "illuminate/support": "^13.0",
+        "php": "^8.2",
+        "illuminate/console": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0",
         "parsecsv/php-parsecsv": "^1.3"
     },
     "require-dev": {
-        "orchestra/testbench": "^11.0",
-        "phpunit/phpunit": "^12.5|^13.0"
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^11.5|^12.5|^13.0"
     },
     "autoload": {
         "psr-4": {

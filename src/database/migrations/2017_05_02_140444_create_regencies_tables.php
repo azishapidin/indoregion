@@ -21,8 +21,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('regencies', function(Blueprint $table){
-            $table->char('id', 4)->index();
-            $table->char('province_id', 2);
+            $table->char('id', 4)->primary();
+            $table->char('province_id', 2)->index();
             $table->string('name', 50);
             $table->foreign('province_id')
                 ->references('id')

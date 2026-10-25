@@ -21,7 +21,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('provinces', function(Blueprint $table){
-            $table->char('id', 2)->index();
+            $table->char('id', 2)->primary();
             $table->string('name');
         });
     }
