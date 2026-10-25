@@ -1,5 +1,5 @@
 # azishapidin/indoregion
-[![Build Status](https://travis-ci.org/azishapidin/indoregion.svg?branch=master)](https://travis-ci.org/azishapidin/indoregion) [![StyleCI](https://styleci.io/repos/90970565/shield?branch=master)](https://styleci.io/repos/90970565) [![License](https://poser.pugx.org/azishapidin/indoregion/license)](https://packagist.org/packages/azishapidin/indoregion) [![Latest Stable Version](https://poser.pugx.org/azishapidin/indoregion/v/stable)](https://packagist.org/packages/azishapidin/indoregion) [![Total Downloads](https://poser.pugx.org/azishapidin/indoregion/downloads)](https://packagist.org/packages/azishapidin/indoregion)
+[![Tests](https://github.com/azishapidin/indoregion/actions/workflows/tests.yml/badge.svg)](https://github.com/azishapidin/indoregion/actions/workflows/tests.yml) [![StyleCI](https://styleci.io/repos/90970565/shield?branch=master)](https://styleci.io/repos/90970565) [![License](https://poser.pugx.org/azishapidin/indoregion/license)](https://packagist.org/packages/azishapidin/indoregion) [![Latest Stable Version](https://poser.pugx.org/azishapidin/indoregion/v/stable)](https://packagist.org/packages/azishapidin/indoregion) [![Total Downloads](https://poser.pugx.org/azishapidin/indoregion/downloads)](https://packagist.org/packages/azishapidin/indoregion)
 
 ```azishapidin/indoregion``` adalah sebuah package Laravel untuk menyimpan data wilayah Indonesia mulai dari Provinsi, Kabupaten/Kota, Kecamatan/Distrik, sampai Desa/Kelurahan. Package akan menambahkan migrations, seeder (untuk import data ke database) dan Model pada project Anda.
 
@@ -18,7 +18,8 @@ composer require azishapidin/indoregion
 
 | Laravel Version | Version | Composer Installation |
 |---- |----|----|
-| 8 | >= 3 | ```composer require azishapidin/indoregion``` |
+| 13 | >= 4 | ```composer require azishapidin/indoregion``` |
+| 8 | 3.x | ```composer require azishapidin/indoregion:^3.0``` |
 | 7 & 6 | 2.2.2 |  ```composer require azishapidin/indoregion:2.2.2``` |
 
 ### Register Service Provider
@@ -51,7 +52,7 @@ php artisan indoregion:publish
 Saat perintah diatas dijalankan, indoregion akan menyalin:
 
 * Files migration dari ```/packages/azishapidin/indoregion/src/database/migrations``` ke ```/database/migrations```
-* Files seeder dari ```/packages/azishapidin/indoregion/src/database/seeds``` ke ```/database/seeds```
+* Files seeder dari ```/packages/azishapidin/indoregion/src/database/seeders``` ke ```/database/seeders```
 * Files model dari ```/packages/azishapidin/indoregion/src/database/models``` ke ```/app/Models```
 
 Setelah itu jalankan perintah dibawah:

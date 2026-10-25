@@ -11,14 +11,14 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVillagesTables extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('villages', function(Blueprint $table){
             $table->char('id', 10)->index();
@@ -36,8 +36,8 @@ class CreateVillagesTables extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::drop('villages');
+        Schema::dropIfExists('villages');
     }
-}
+};
